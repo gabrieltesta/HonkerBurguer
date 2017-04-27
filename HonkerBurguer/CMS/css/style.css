@@ -1,3 +1,11 @@
+/*
+	Arquivo CSS - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação CSS3 W3C - 0 erros encontrados.
+*/
+
+/* Geral */  
 body
 {
 	font-family: Calibri;
@@ -24,6 +32,14 @@ textarea
 	overflow: hidden;
 
 }
+
+section
+{
+	width:100%;
+	height:650px;
+}
+
+/**/
 
 /* Header */
 header
@@ -148,12 +164,6 @@ nav span
 }
 /**/
 
-section
-{
-	width:100%;
-	height:650px;
-}
-
 /* Footer */
 footer
 {
@@ -171,7 +181,6 @@ footer p
 /**/
 
 /* Adm. Fale Conosco */
-
 #principalFaleConosco
 {
 	width: 1600px;
@@ -451,10 +460,8 @@ footer p
 {
 	margin-left: 5%;
 }
-
-
-
 /**/
+
 /* Index */
 
 #sectionIndex
@@ -525,7 +532,6 @@ footer p
 	color: orange;
 	border-color: orange;
 }
-
 /**/
 
 /* Menu Usuário */
@@ -790,17 +796,4 @@ footer p
 	height:750px;
 	width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/**/

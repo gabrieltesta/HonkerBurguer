@@ -1,8 +1,9 @@
 /*
-	#A88B00 - amarelo
-	#2A2A2A
+	Arquivo CSS - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação CSS3 W3C - 0 erros encontrados.
 */
-
 /* Geral */
 body
 {
@@ -360,8 +361,6 @@ footer table
     text-transform:uppercase;
     letter-spacing:-1px;
     overflow:hidden;
-    -moz-box-shadow:0px 0px 10px #222;
-    -webkit-box-shadow:0px 0px 10px #222;
     box-shadow:0px 0px 10px #222;
 	border-bottom: solid 1px #A88B00;
 }
@@ -405,9 +404,7 @@ img.bg{
     border-right:none;
     outline:none;
     text-shadow:-1px 1px 1px #000;
-    -moz-border-radius:10px 0px 0px 20px;
-    -webkit-border-top-left-radius:10px;
-    -webkit-border-bottom-left-radius:20px;
+    border-radius:10px 0px 0px 20px;
     border-top-left-radius:10px;
     border-bottom-left-radius:20px;
 }
@@ -435,8 +432,7 @@ img.bg{
     left:0px;
     padding:20px;
     background-color:#222;
-    -moz-border-radius:0px 10px 0px 0px;
-    -webkit-border-top-right-radius:10px;
+   
     border-top-right-radius:10px;
     opacity:0.7;
     border-top:2px solid #000;
@@ -750,18 +746,20 @@ textarea
 	font-weight: bold;
 }
 
-#descLancheMes
+.descLancheMes
 {
-	width:1500px;
-	height: 200px;
+	width:1400px;
+	height: 100px;
 	
 	border: solid 1px #A88B00;
 	margin-left:auto;
 	margin-right: auto;
 	margin-top: 50px;
+	padding: 40px;
+	overflow: auto;
 }
 
-#descLancheMes p
+.descLancheMes p
 {
 	text-indent: 40px;
 }
@@ -790,7 +788,7 @@ textarea
 }
 
 
-#tituloLanche
+.tituloLanche
 {
 	width: 500px;
 	height: 40px;
@@ -799,11 +797,9 @@ textarea
 	margin-left: auto;
 	margin-right: auto;
 	border-bottom:none;
-
-
 }
 
-#tituloLanche h6
+.tituloLanche h6
 {
 	font-size: 20pt;
 	margin-top: 5px;
@@ -841,7 +837,7 @@ textarea
 /**/
 
 /* Promoções */
-#imgPromocao
+.imgPromocao
 {
 	width: 500px;
 	height: 500px;
@@ -854,7 +850,7 @@ textarea
 
 }
 
-#imgPromocao img
+.imgPromocao img
 {
 	width:499px;
 	height:500px;

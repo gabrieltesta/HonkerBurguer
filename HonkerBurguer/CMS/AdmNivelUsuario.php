@@ -1,20 +1,26 @@
+<!-- 
+	Página AdmNivelUsuario(CMS) - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação HTML5 W3C - 0 erros encontrados.
+-->
 <?php 
 	session_start();
 	require('checkLogin.php');
-	
-	$conexao = mysql_connect('localhost', 'root', 'bcd127');
-	mysql_select_db('db_honkerburguer');
+	require_once('conectarMySQL.php');
 	
 	$nome = "";
 	$id_usuario = "";
-	
 	$modo = "Salvar";
 	
 	if(isset($_GET['modo']))
 	{
 		if($_GET['modo'] == 'editar')
 		{
+			//Muda o modo de submit para edição
 			$modo = "Editar";
+			
+			//Realiza o SELECT no banco de dados ao registro sendo editado
 			$sql = "SELECT * from tbl_nivel_usuario WHERE id_nivel_usuario='".$_GET['idnivel']."';"; 	
 			$select = mysql_query($sql);
 			
@@ -27,6 +33,7 @@
 		}
 		else if ($_GET['modo'] == 'excluir')
 		{
+			//Exclui o registro referente no banco de dados
 			$sql = "DELETE from tbl_nivel_usuario WHERE id_nivel_usuario='".$_GET['idnivel']."';";
 			mysql_query($sql);
 			header('location:AdmNivelUsuario.php');
@@ -40,6 +47,7 @@
 		{
 			$nome = $_POST['txtNivelNome'];
 			
+			//Edita o registro referente no banco de dados
 			$sql = "UPDATE tbl_nivel_usuario SET nome='".$nome."' WHERE id_nivel_usuario='".$id_usuario."';";
 			mysql_query($sql);
 			header('location:AdmNivelUsuario.php');
@@ -48,6 +56,7 @@
 		{
 			$nome = $_POST['txtNivelNome'];
 			
+			//Insere no banco de dados as informações nas caixas de registro
 			$sql = "INSERT INTO tbl_nivel_usuario(nome) VALUES('".$nome."')";
 			mysql_query($sql);
 			header('location:AdmNivelUsuario.php');
@@ -66,6 +75,8 @@
 			<?php require('header.php'); ?>
 			<?php require('nav.php'); ?>
 			<section id="conteudo">
+				<h2 style="display: none;">Adm. Nível Usuário</h2>
+				<!-- Lista de registros -->
 				<div id="tblNivelUsuarioBox">
 					<div id="tblNivelUsuarioScroll">
 						<table class="tblNivelUsuario">
@@ -74,6 +85,7 @@
 								<th>Opções</th>
 							</tr>
 							<?php
+								//Realiza um SELECT no banco de dados para visualizar os registros
 								$sql = "SELECT * from tbl_nivel_usuario;";
 								$select = mysql_query($sql);
 								
@@ -92,6 +104,7 @@
 							?>
 						</table>
 					</div>
+					<!-- Caixa de registro -->
 					<div id="tblNivelUsuarioBoxRegistro">
 						<form method="post" action="AdmNivelUsuario.php" name="frmAdmNivelUsuario">
 						<table class="tblNivelUsuario tblNivelUsuarioEditar">

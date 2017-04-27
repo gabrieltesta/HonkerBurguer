@@ -1,4 +1,12 @@
+<!-- 
+	Página Index - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação HTML5 W3C - 0 erros encontrados.
+-->
 <?php 
+	// Ao retornar de um login mal sucedido, o página possui login=false na URL
+	// método verifica a existência do parâmetro login e cria uma janela de alerta de login inválido.
 	if (isset($_GET['login']))
 	{
 		if($_GET['login'] == 'false')

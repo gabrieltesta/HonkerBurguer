@@ -1,5 +1,6 @@
+<!-- NAV -->
 <?php 
-
+	// Verifica a página atual, e implementa uma div se for a página referente
 	$paginaAtual = basename($_SERVER['PHP_SELF']);
 	
 	if ($paginaAtual == 'AdmConteudo.php')

@@ -1,9 +1,13 @@
+<!-- 
+	Página AdmUsuarios(CMS) - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação HTML5 W3C - 0 erros encontrados.
+-->
 <?php 
 	session_start();
 	require('checkLogin.php');
-	
-	$conexao = mysql_connect('localhost', 'root', 'bcd127');
-	mysql_select_db('db_honkerburguer');
+	require_once('conectarMySQL.php');
 	
 	$nome = "";
 	$cargo = "";
@@ -20,7 +24,10 @@
 	{
 		if($_GET['modo'] == 'editar')
 		{
+			//Muda o modo de submit para edição
 			$modo = "Editar";
+			
+			//Realiza um SELECT no banco de dados do registro a ser editado
 			$sql = "SELECT id_usuario, tbl_usuario.nome, login, email, telefone, tbl_usuario.id_nivel_usuario, tbl_nivel_usuario.nome AS cargo FROM tbl_usuario, tbl_nivel_usuario where tbl_usuario.id_nivel_usuario = tbl_nivel_usuario.id_nivel_usuario AND id_usuario=".$_GET['id_usuario'].";";
 			$select = mysql_query($sql);
 			
@@ -37,6 +44,7 @@
 		}
 		else if ($_GET['modo'] == 'excluir')
 		{
+			//Exclui o registro referente no banco de dados
 			$sql = "DELETE from tbl_usuario WHERE id_usuario='".$_GET['id_usuario']."';";
 			mysql_query($sql);
 			header('location:AdmUsuarios.php');
@@ -54,6 +62,7 @@
 			$email = $_POST['txtEmail'];
 			$telefone = $_POST['txtTelefone'];
 			
+			//Realiza a edição ao registro referente no banco de dados
 			$sql = "UPDATE tbl_usuario SET nome='".$nome."', id_nivel_usuario='".$id_cargo."', login='".$login."', email='".$email."', telefone='".$telefone."' WHERE id_usuario=".$id_usuario.";";
 			mysql_query($sql);
 			header('location:AdmUsuarios.php');
@@ -67,6 +76,7 @@
 			$email = $_POST['txtEmail'];
 			$telefone = $_POST['txtTelefone'];
 			
+			//Insere o registro no banco de dados com as informações inseridas no formulário
 			$sql = "INSERT INTO tbl_usuario(id_nivel_usuario, nome, login, senha, email, telefone) VALUES('".$id_cargo."','".$nome."','".$login."','".$senha."','".$email."','".$telefone."')";
 			mysql_query($sql);
 			header('location:AdmUsuarios.php');
@@ -85,6 +95,8 @@
 			<?php require('header.php'); ?>
 			<?php require('nav.php'); ?>
 			<section id="conteudoFaleConosco">
+				<h2 style="display: none;">Adm. Usuários</h2>
+				<!-- Lista de registros -->
 				<div id="tblFaleConoscoBox">
 					<table id="tblFaleConosco">
 						<tr>
@@ -96,6 +108,7 @@
 							<th>Opções</th>
 						</tr> 
 						<?php
+							//Realiza um SELECT no banco de dados para visualização em lista
 							$sql = "SELECT id_usuario, tbl_usuario.nome, login, email, telefone, tbl_nivel_usuario.nome AS cargo FROM tbl_usuario, tbl_nivel_usuario where tbl_usuario.id_nivel_usuario = tbl_nivel_usuario.id_nivel_usuario;";
 							$select = mysql_query($sql);
 							
@@ -118,6 +131,7 @@
 						?>
 					</table>
 				</div>
+				<!-- Caixa de registro -->
 				<div id="formFaleConoscoBox">
 					<div id="tituloFormFaleConosco"><span>Registro</span></div>
 					<form name="frmFaleConosco" method="post" action="AdmUsuarios.php">
@@ -130,6 +144,7 @@
 								<td>
 									<select name="slcCargo">
 									<?php
+										//Realiza um SELECT no banco de dados para inserir os níveis de usuários no <select>
 										$sql = "SELECT * FROM tbl_nivel_usuario";
 										$select = mysql_query($sql);
 										while($resultado=mysql_fetch_array($select))

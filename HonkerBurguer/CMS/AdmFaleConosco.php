@@ -1,9 +1,13 @@
+<!-- 
+	Página AdmFaleConosco(CMS) - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação HTML5 W3C - 0 erros encontrados.
+-->
 <?php 
 	session_start();
 	require('checkLogin.php');
-	
-	$conexao = mysql_connect('localhost', 'root', 'bcd127');
-	mysql_select_db('db_honkerburguer');
+	require_once('conectarMySQL.php');
 	
 	$nome = "";
 	$sexo = "";
@@ -20,12 +24,14 @@
 	{
 		if ($_GET['modo'] == 'excluir')
 		{
+			//Exclui o registro referente no banco de dados
 			$sql = "DELETE FROM tbl_faleconosco WHERE idfaleconosco='".$_GET['idfaleconosco']."';";
 			mysql_query($sql);
 			header('location:AdmFaleConosco.php');
 		}
 		else if ($_GET['modo'] == 'visualizar')
 		{
+			// Realiza um SELECT no banco de dados do registro a ser editado
 			$sql = "SELECT * FROM tbl_faleconosco WHERE idfaleconosco='".$_GET['idfaleconosco']."';";
 			$select = mysql_query($sql);
 			
@@ -57,6 +63,8 @@
 			<?php require('header.php'); ?>
 			<?php require('nav.php'); ?>
 			<section id="conteudoFaleConosco">
+				<h2 style="display: none;">Adm. Fale Conosco</h2>
+				<!-- Lista de registros -->
 				<div id="tblFaleConoscoBox">
 					<table id="tblFaleConosco">
 						<tr>
@@ -73,6 +81,7 @@
 							<th class="colOpcao">Opções</th>
 						</tr> 
 						<?php
+							// Realiza um SELECT no banco de dados para visualizar os registros
 							$sql = "SELECT * FROM tbl_faleconosco ORDER BY idfaleconosco DESC;";
 							$select = mysql_query($sql);
 							
@@ -100,6 +109,7 @@
 						?>
 					</table>
 				</div>
+				<!-- Caixa de registro -->
 				<div id="formFaleConoscoBox">
 					<div id="tituloFormFaleConosco"><span>Registro</span></div>
 					<form name="frmFaleConosco" method="post" action="AdmFaleConosco.php">
@@ -111,6 +121,7 @@
 								<th>Sexo</th>
 								<td id="tblFaleConoscoRadio">
 								<?php 
+									//Verifica o sexo e seleciona o input referente
 									if ($sexo == 'F')
 									{
 										?><input type="radio" name="radSexo" value="F" checked>Feminino<input type="radio" name="radSexo" value="M" disabled>Masculino<?php

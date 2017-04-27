@@ -1,3 +1,9 @@
+<!-- 
+	Página MenuUsuario(CMS) - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação HTML5 W3C - 0 erros encontrados.
+-->
 <?php
 	session_start();
 	require('checkLogin.php');
@@ -13,17 +19,18 @@
 		<div id="principal">
 			<?php require('header.php'); ?>
 			<?php require('nav.php'); ?>
+			<!-- Menu de usuário -->
 			<section id="sectionMenuUsuario">
 				<h2>Menu de Usuários</h2>
 				<div class="opcaoIndex menuUsuarioOption">
 					<h3>Adm. Usuários</h3>
 					<img src="imagens/usuarios.png" alt="Adm. Usuários">
-					<a href="AdmUsuarios.php"><div><span>Entrar<span></div></a>
+					<a href="AdmUsuarios.php"><div><span>Entrar</span></div></a>
 				</div>
 				<div class="opcaoIndex menuUsuarioOption">
 					<h3>Adm. Níveis</h3>
 					<img src="imagens/menunivelusuario.png" alt="Adm. Níveis">
-					<a href="AdmNivelUsuario.php"><div><span>Entrar<span></div></a>
+					<a href="AdmNivelUsuario.php"><div><span>Entrar</span></div></a>
 				</div>
 			</section>
 			<?php require('footer.php'); ?>

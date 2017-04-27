@@ -1,3 +1,9 @@
+<!-- 
+	Página Ambientes - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação HTML5 W3C - 0 erros encontrados.
+-->
 <?php 
 	require('/CMS/conectarMySQL.php');
 	
@@ -6,12 +12,7 @@
 	$logradouro = "";
 	$local = "";
 	$telefone = "";
-	$email = "";
-	
-	$sql = "SELECT * FROM tbl_ambiente";
-	$select = mysql_query($sql);
-	
-	
+	$email = "";	
 ?>
 <!-- Ambientes -->
 <!DOCTYPE html>
@@ -35,6 +36,9 @@
 							<div class="espaco"></div>
 							<div class="scrollAmbiente">
 									<?php
+										//Realiza um SELECT no banco de dados
+										$sql = "SELECT * FROM tbl_ambiente";
+										$select = mysql_query($sql);
 										while($resultado=mysql_fetch_array($select))
 										{
 									?>

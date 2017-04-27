@@ -1,3 +1,9 @@
+<!-- 
+	Página Fale Conosco - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação HTML5 W3C - 0 erros encontrados.
+-->
 <!-- Fale Conosco -->
 <?php
 	// Conexão com banco de dados MySQL

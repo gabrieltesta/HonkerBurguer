@@ -1,9 +1,16 @@
+<!-- 
+	Página Sobre - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação HTML5 W3C - 0 erros encontrados.
+-->
 <?php 
 	require('/CMS/conectarMySQL.php');
 	
 	$imagem = "";
 	$descricao = "";
 	
+	//Realiza um SELECT no banco de dados cujo status está true(1), ou seja, que deve ser exibido
 	$sql = "SELECT * FROM tbl_sobreahamburgueria WHERE status=1";
 	$select = mysql_query($sql);
 	

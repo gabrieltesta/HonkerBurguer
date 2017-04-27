@@ -1,4 +1,10 @@
-<?php
+ <!-- 
+	Página Lanche do Mês - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação HTML5 W3C - 0 erros encontrados.
+-->
+ <?php
 	require('/CMS/conectarMySQL.php');
 	
 	$nome = "";
@@ -21,6 +27,7 @@
 	$qtdSodio = "";
 	$vdSodio = "";
 	
+	//Realiza um SELECT no banco de dados cujo status está true(1), ou seja, que deve ser exibido,e que possui a informação nutricional do produto
 	$sql = "SELECT * FROM tbl_produto, tbl_informacaonutricional WHERE status_lanchedomes=1 AND tbl_produto.id_informacaonutricional = tbl_informacaonutricional.id_informacaonutricional;";
 	$select = mysql_query($sql);
 	
@@ -68,11 +75,11 @@
 			<section>
 				<div class="conteudoExternoLDM">				
 					<div id="titulo"><h6>Lanche do Mês</h6></div>
-					<div id="tituloLanche" style="margin-top: 150px;"><h6><?php echo($nome); ?></h6></div>
+					<div class="tituloLanche" style="margin-top: 150px;"><h6><?php echo($nome); ?></h6></div>
 					<div id="imgLancheMes">
 						<div id="precoLancheMes"><span>R$ <?php echo($preco); ?></span></div><img src="<?php echo($imagem); ?>" alt="Lanche do Mês">
 					</div>
-					<div id="descLancheMes">
+					<div class="descLancheMes">
 						<p><?php echo($descricao); ?></p>
 					</div>
 					<table id="tblNutricional">
