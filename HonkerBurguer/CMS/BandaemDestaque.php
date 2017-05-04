@@ -30,7 +30,7 @@
 			//Altera o modo do submit para edição
 			$modo = 'Editar';
 			
-			//Realiza um SELECT no banco de dados e implenta os dados nos inputs
+			//Realiza um SELECT no banco de dados e implementa os dados nos inputs
 			$sql = "SELECT * FROM tbl_bandaemdestaque WHERE id_banda=".$_GET['id_banda'].";";
 			$select = mysql_query($sql);
 			if ($resultado=mysql_fetch_array($select))
@@ -64,7 +64,7 @@
 			require('uploadImagem.php');
 			if ($statusImagem)
 			{
-				// Insere o banco de dados o novo registro
+				// Insere no banco de dados o novo registro
 				$sql = 'INSERT INTO tbl_bandaemdestaque(nome, titulo, imagem, descricao, status) VALUES("'.$nome.'", "'.$titulo.'", "'.$uploadfile.'", "'.$descricao.'", "'.$_POST['bandaAtiva'].'");';
 				mysql_query($sql);
 				header('location:BandaemDestaque.php');

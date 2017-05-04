@@ -8,6 +8,7 @@
 	$descricao = "";
 	$preco = "";
 	$precoPromocional = "";
+	$id_promocao = "";
 	
 	$sql = "SELECT id_produto, nome FROM tbl_produto ORDER BY nome;";
 	$selectsalvar = mysql_query($sql);

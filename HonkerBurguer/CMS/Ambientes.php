@@ -1,3 +1,9 @@
+<!-- 
+	Página Ambientes (CMS) - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação HTML5 W3C - 0 erros encontrados.
+-->
 <?php 
 	session_start();
 	require_once('conectarMySQL.php');
@@ -9,17 +15,23 @@
 	$local = "";
 	$telefone = "";
 	$email = "";
+	
+	//Verifica qual modo está sendo executado
 	if (isset($_GET['modo']))
 	{
 		if ($_GET['modo'] == 'excluir')
 		{
+			//Realiza uma exclusão de um registro no banco de dados 
 			$sql = "DELETE FROM tbl_ambiente WHERE id_ambiente=".$_GET['id_ambiente'].";";
 			mysql_query($sql);
 			header('location:Ambientes.php');
 		}
 		else if ($_GET['modo'] == 'editar')
 		{
+			//Altera o modo de submit para edição
 			$modo = 'Editar';
+			
+			//Realiza um SELECT no banco de dados e implementa os dados nos inputs
 			$sql = "SELECT * FROM tbl_ambiente WHERE id_ambiente=".$_GET['id_ambiente'].";";
 			$select = mysql_query($sql);
 			if ($resultado=mysql_fetch_array($select))
@@ -33,6 +45,7 @@
 		}
 		
 	}
+	//Verifica se o botão submit foi utilizado
 	if (isset($_POST['btnSalvar']))
 	{	
 		$titulo = $_POST['txtAmbienteTitulo'];
@@ -47,12 +60,14 @@
 			require('uploadImagem.php');
 			if ($statusImagem)
 			{
+				//Insere no banco de dados um novo registro
 				$sql = 'INSERT INTO tbl_ambiente(titulo, imagem, logradouro, local, telefone, email) VALUES("'.$titulo.'", "'.$uploadfile.'", "'.$logradouro.'", "'.$local.'", "'.$telefone.'", "'.$email.'");';
 				mysql_query($sql);
 				header('location:Ambientes.php');
 			}
 			else
 			{
+				//Caso uma imagem não foi selecionada, mostra uma mensagem
 				?><script>alert('Nenhuma imagem foi selecionada!')</script><?php
 			}
 		}
@@ -63,6 +78,7 @@
 			require('uploadImagem.php');
 			if ($statusImagem)
 			{
+				//Realiza uma edição no registro do banco de dados se uma imagem foi selecionada
 				$sql = 'UPDATE tbl_ambiente SET titulo="'.$titulo.'", logradouro="'.$logradouro.'", local="'.$local.'", telefone="'.$telefone.'", email="'.$email.'", imagem="'.$uploadfile.'" WHERE id_ambiente='.$_POST["txtIdAmbiente"].';';
 				mysql_query($sql);
 				header('location:Ambientes.php');
@@ -70,6 +86,7 @@
 			}
 			else
 			{
+				//Realiza uma edição no registro do banco de dados de dados se uma imagem não foi selecionada
 				$sql = 'UPDATE tbl_ambiente SET titulo="'.$titulo.'", logradouro="'.$logradouro.'", local="'.$local.'", telefone="'.$telefone.'", email="'.$email.'" WHERE id_ambiente='.$_POST["txtIdAmbiente"].';';
 				mysql_query($sql);
 				header('location:Ambientes.php');
@@ -86,6 +103,7 @@
 	</head>
 	<body>
 		<div id="principalBanda">
+			<h2 style="display: none;">Ambientes</h2>
 			<?php require('header.php'); ?>
 			<?php require('nav.php'); ?>
 			<section id="conteudoBanda">
@@ -101,6 +119,7 @@
 								<th>Opções</th>
 							</tr>
 							<?php
+								// SELECT no banco de dados para visualizar os ambientes registrados
 								$sql = "SELECT * FROM tbl_ambiente ORDER BY id_ambiente DESC";
 								$select = mysql_query($sql);
 							
@@ -114,8 +133,8 @@
 											<td class="tblBandaNome"><?php echo($resultado['telefone']); ?></td>
 											<td class="tblBandaNome"><?php echo($resultado['email']); ?></td>
 											<td class="tblBandaOpcoes alignText">
-												<a href="Ambientes.php?modo=editar&id_ambiente=<?php echo($resultado['id_ambiente']); ?>"><img src="imagens/edit.png"></a>
-												<a href="Ambientes.php?modo=excluir&id_ambiente=<?php echo($resultado['id_ambiente']); ?>"><img src="imagens/delete.png"></a>
+												<a href="Ambientes.php?modo=editar&id_ambiente=<?php echo($resultado['id_ambiente']); ?>"><img src="imagens/edit.png" alt="Editar"></a>
+												<a href="Ambientes.php?modo=excluir&id_ambiente=<?php echo($resultado['id_ambiente']); ?>"><img src="imagens/delete.png" alt="Excluir"></a>
 											</td>
 										</tr>
 									<?php

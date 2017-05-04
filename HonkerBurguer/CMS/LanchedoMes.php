@@ -1,14 +1,25 @@
+<!-- 
+	Página Lanche do Mês(CMS) - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação HTML5 W3C - 0 erros encontrados.
+-->
 <?php 
 	session_start();
 	require_once('conectarMySQL.php');
 	require('checkLogin.php');
 	$nome = "";
 	$statusLancheMes = "";
+	
+	//Verifica qual modo está sendo executado
 	if (isset($_GET['modo']))
 	{
 		if ($_GET['modo'] == 'editar')
 		{
+			//Altera o modo do submit para edição
 			$modo = 'Editar';
+			
+			//Realiza um SELECT no banco de dados e implementa os dados nos inputs
 			$sql = "SELECT * FROM tbl_produto WHERE id_produto=".$_GET['id_produto'].";";
 			$select = mysql_query($sql);
 			if ($resultado=mysql_fetch_array($select))
@@ -18,18 +29,22 @@
 			}
 		}
 	}
+	
+	//Verifica se o botão submit foi utilizado
 	if (isset($_POST['btnSalvar']))
 	{	
 		$nome = $_POST['slcProduto'];
 		$idProduto = $_POST['txtIdProduto'];
 		$statusLancheMes = $_POST['radLancheMes'];
 		
+		//Se o registro possui Status = Sim, transforma todos os registros do banco para Status = Não
 		if ($_POST['radLancheMes'] == 1)
 		{
 			$limparStatus = "UPDATE tbl_produto SET status_lanchedomes=0 WHERE status_lanchedomes>-1;";
 			mysql_query($limparStatus);
 		}
 		
+		//Realiza a edição do registro no banco de dados
 		$sql = 'UPDATE tbl_produto SET status_lanchedomes = '.$statusLancheMes.' WHERE id_produto='.$idProduto.';';
 		mysql_query($sql);
 		header('location:LanchedoMes.php');	
@@ -47,6 +62,7 @@
 			<?php require('header.php'); ?>
 			<?php require('nav.php'); ?>
 			<section id="conteudoBanda">
+				<h2 style="display: none;">Lanche do Mês</h2>
 				<div id="conteudo">
 					<div id="tblBandaBox">
 						<table id="tblBanda">
@@ -58,6 +74,7 @@
 								<th>Opções</th>
 							</tr>
 							<?php
+							// SELECT no banco de dados para visualizar os lanches registrados
 								$sql = "SELECT * FROM tbl_produto ORDER BY status_lanchedomes DESC, id_produto DESC";
 								$select = mysql_query($sql);
 							
