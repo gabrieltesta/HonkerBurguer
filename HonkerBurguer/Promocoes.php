@@ -34,7 +34,7 @@
 					<div class="scrollPromocao">
 					<?php 
 					//Realiza um SELECT no banco de dados cujo produtos tem promoções
-					$sql = "SELECT tbl_produto.id_produto, tbl_produto.nome, tbl_produto.descricao, tbl_produto.preco, tbl_promocao.preco as precoPromocional, tbl_produto.imagem from tbl_produto, tbl_promocao WHERE tbl_produto.id_produto = tbl_promocao.id_produto;";
+					$sql = "SELECT * from vw_produto_promocao;";
 					$select = mysql_query($sql);
 					
 					while($resultado=mysql_fetch_array($select))
@@ -53,6 +53,7 @@
 							<img src="<?php echo($imagem); ?>" alt="<?php echo($nome); ?>">
 						</div>
 						</div>
+						<!-- Descrição Promoção -->
 						<div class="descLancheMes">
 							<p><?php echo($descricao); ?></p>
 						</div>

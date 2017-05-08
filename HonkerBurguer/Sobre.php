@@ -11,7 +11,7 @@
 	$descricao = "";
 	
 	//Realiza um SELECT no banco de dados cujo status está true(1), ou seja, que deve ser exibido
-	$sql = "SELECT * FROM tbl_sobreahamburgueria WHERE status=1";
+	$sql = "SELECT * FROM vw_sobre_ativo;";
 	$select = mysql_query($sql);
 	
 	if($resultado=mysql_fetch_array($select))
@@ -40,6 +40,7 @@
 					<div id="titulo"><h6>Sobre a Hamburgueria</h6></div>
 					<div id="conteudoSobre">
 						<div class="espaco"></div>
+						<!-- Descrição Sobre -->
 						<div id="sobrenos">
 							<hr>
 							<p><?php echo($descricao); ?></p>

@@ -71,6 +71,7 @@
 					<div class="bgLeftFC"></div>
 					<div class="conteudoInternoFC">
 						<div id="titulo"><h6>Fale Conosco</h6></div>
+						<!-- Área de formulário de fale conosco -->
 						<form name="frmFaleConosco" method="post" action="FaleConosco.php">
 							<table id="tblFaleConosco">
 								<tr>

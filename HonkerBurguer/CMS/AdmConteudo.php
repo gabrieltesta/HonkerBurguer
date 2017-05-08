@@ -1,3 +1,9 @@
+<!-- 
+	Página Adm. Conteúdo(CMS) - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação HTML5 W3C - 0 erros encontrados.
+-->
 <?php 
 	session_start();
 	require('checkLogin.php');
@@ -14,6 +20,8 @@
 			<?php require('header.php'); ?>
 			<?php require('nav.php'); ?>
 			<section id="sectionConteudo">
+				<h2 style="display: none;">Adm. Conteúdo</h2>
+				<!-- Área de seleção de categoria -->
 				<div id="conteudo">
 					<table id="tblConteudo">
 						<tr>

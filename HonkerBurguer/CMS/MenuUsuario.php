@@ -19,7 +19,7 @@
 		<div id="principal">
 			<?php require('header.php'); ?>
 			<?php require('nav.php'); ?>
-			<!-- Menu de usuário -->
+			<!-- Área de seleção de categoria -->
 			<section id="sectionMenuUsuario">
 				<h2>Menu de Usuários</h2>
 				<div class="opcaoIndex menuUsuarioOption">

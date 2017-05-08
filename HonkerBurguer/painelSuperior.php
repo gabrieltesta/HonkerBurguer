@@ -3,6 +3,7 @@
 	<header>
 		<a href="Index.php"><img src="Imagens/logo.png" alt="logo"></a>
 	</header>
+	<!-- Menu  de navegação -->
 	<nav>
 		<ul>
 			<li><a href="Index.php">Home</a></li>
@@ -14,6 +15,7 @@
 			<li><a href="FaleConosco.php">Fale Conosco</a></li>
 		</ul>
 	</nav>
+	<!-- Formulário de autenticação CMS -->
 	<div id="login">
 		<form name="frmLogin" method="post" action="cms/index.php">
 		<table>

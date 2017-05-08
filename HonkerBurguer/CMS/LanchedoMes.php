@@ -65,6 +65,7 @@
 				<h2 style="display: none;">Lanche do Mês</h2>
 				<div id="conteudo">
 					<div id="tblBandaBox">
+						<!-- Lista de registros -->
 						<table id="tblBanda">
 							<tr>
 								<th>Nome</th>
@@ -96,6 +97,7 @@
 							
 						</table>
 					</div>
+					<!-- Área de novo registro -->
 					<div id="tblBandaBoxRegistro">
 						<form method="post" action="LanchedoMes.php" name="frmAdmBanda" enctype="multipart/form-data">
 						<table class="tblBandaRegistro tblBandaEditar">

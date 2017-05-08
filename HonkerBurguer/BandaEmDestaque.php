@@ -12,7 +12,7 @@
 	$descricao = "";
 	
 	//Realiza um SELECT no banco de dados cujo status está true(1), ou seja, que deve ser exibido
-	$sql = "SELECT * FROM tbl_bandaemdestaque WHERE status=1";
+	$sql = "SELECT * FROM vw_banda_ativa;";
 	$select = mysql_query($sql);
 	
 	if($resultado=mysql_fetch_array($select))
@@ -38,6 +38,7 @@
 				require('redesSociais.php');
 			?>
 			<section>
+				<!-- Conteúdo descritivo de banda -->
 				<div class="conteudoExternoBanda">		
 					<div id="titulo"><h6>Banda em Destaque</h6></div>
 					<div id="tituloBanda"><h6><?php echo($titulo); ?></h6></div>

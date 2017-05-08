@@ -34,6 +34,7 @@
 					<div id="titulo"><h6>Nossos Ambientes</h6></div>
 						<div id="conteudoAmbiente">
 							<div class="espaco"></div>
+							<!-- Caixa exterior de ambientes -->
 							<div class="scrollAmbiente">
 									<?php
 										//Realiza um SELECT no banco de dados
@@ -42,6 +43,7 @@
 										while($resultado=mysql_fetch_array($select))
 										{
 									?>
+								<!-- Dados descritivos de ambientes -->
 								<div class="infoAmbiente">
 									<div class="imgInfoAmbiente">
 										<img src="<?php echo('CMS/'.$resultado['imagem']); ?>" alt="Honker Burguer">

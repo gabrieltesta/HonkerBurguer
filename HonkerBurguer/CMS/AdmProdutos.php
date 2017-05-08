@@ -21,7 +21,6 @@
 			<?php require('header.php'); ?>
 			<?php require('nav.php'); ?>
 			<section>
-
 			</section>
 			<?php require('footer.php'); ?>
 		</div>

@@ -1,3 +1,9 @@
+<!-- 
+	Página Sobre a Hamburgueria(CMS) - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação HTML5 W3C - 0 erros encontrados.
+-->
 <?php 
 	session_start();
 	require_once('conectarMySQL.php');
@@ -7,17 +13,23 @@
 	$nome = "";
 	$descricao = "";
 	$status = "";
+	
 	if (isset($_GET['modo']))
 	{
+		//Verifica o modo a ser executado
 		if ($_GET['modo'] == 'excluir')
 		{
+			//Exclui o registro referente no banco de dados
 			$sql = "DELETE FROM tbl_sobreahamburgueria WHERE id_sobre=".$_GET['id_sobre'].";";
 			mysql_query($sql);
 			header('location:SobreaHamburgueria.php');
 		}
 		else if ($_GET['modo'] == 'editar')
 		{
+			//Muda o modo do botão submit para edição
 			$modo = 'Editar';
+			
+			//Realiza um SELECT no banco de dados do registro a ser editado
 			$sql = "SELECT * FROM tbl_sobreahamburgueria WHERE id_sobre=".$_GET['id_sobre'].";";
 			$select = mysql_query($sql);
 			if ($resultado=mysql_fetch_array($select))
@@ -31,8 +43,11 @@
 	}
 	if (isset($_POST['btnSalvar']))
 	{
+		//Altera todos os caracteres " para ' para registro no banco de dados
 		$nome = str_replace('"', "'", $_POST['txtSobreNome']);
 		$descricao = str_replace('"', "'", $_POST['txtSobreDescricao']);
+		
+		//Verifica se o novo registro possui Status = Sim, e caso sim, altera todos os registros no banco de dados para Status = Não
 		if ($_POST['sobreAtivo'] == 1)
 		{
 			$limparStatus = "UPDATE tbl_sobreahamburgueria SET status=0 WHERE id_sobre>-1;";
@@ -45,28 +60,31 @@
 			require('uploadImagem.php');
 			if ($statusImagem)
 			{
+				//Realiza o registro no banco de dados caso o envio da imagem foi bem sucedido
 				$sql = 'INSERT INTO tbl_sobreahamburgueria(nome, imagem, descricao, status) VALUES("'.$nome.'", "'.$uploadfile.'", "'.$descricao.'", "'.$_POST['sobreAtivo'].'");';
 				mysql_query($sql);
 				header('location:SobreaHamburgueria.php');
 			}
 			else
 			{
+				//Exibe um alerta de erro caso o envio da imagem foi mal sucedido
 				?><script>alert('Nenhuma imagem foi selecionada!')</script><?php
 			}
 		}
 		if ($_POST['btnSalvar'] == 'Editar')
 		{
-
 			$statusImagem = false;
 			require('uploadImagem.php');
 			if ($statusImagem)
 			{
+				//Realiza a edição do registro no banco de dados caso uma imagem foi selecionada
 				$sql = 'UPDATE tbl_sobreahamburgueria SET nome="'.$nome.'", descricao="'.$descricao.'", imagem="'.$uploadfile.'", status="'.$_POST["sobreAtivo"].'" WHERE id_sobre='.$_POST["txtIdSobre"].';';
 				mysql_query($sql);
 				header('location:SobreaHamburgueria.php');
 			}
 			else
 			{
+				//Realiza a edição do registro no banco de dados caso nenhuma imagem foi selecionada
 				$sql = 'UPDATE tbl_sobreahamburgueria SET nome="'.$nome.'", descricao="'.$descricao.'", status="'.$_POST["sobreAtivo"].'" WHERE id_sobre='.$_POST["txtIdSobre"].';';
 				mysql_query($sql);
 				header('location:SobreaHamburgueria.php');
@@ -86,8 +104,10 @@
 			<?php require('header.php'); ?>
 			<?php require('nav.php'); ?>
 			<section id="conteudoBanda">
+				<h2 style="display: none;">Sobre a Hamburgueria</h2>
 				<div id="conteudo">
 					<div id="tblBandaBox">
+						<!-- Tabela de registros -->
 						<table id="tblBanda">
 							<tr>
 								<th>Nome</th>
@@ -96,6 +116,7 @@
 								<th>Opções</th>
 							</tr>
 							<?php
+								//Realiza um SELECT no banco de dados para exibição dos registros
 								$sql = "SELECT * FROM tbl_sobreahamburgueria ORDER BY status DESC, id_sobre DESC";
 								$select = mysql_query($sql);
 							
@@ -107,8 +128,8 @@
 											<td class="tblBandaTexto"><?php echo($resultado['descricao']); ?></td>
 											<td class="tblBandaStatus alignText"><input type="radio" <?php if($resultado['status'] == 1){ echo('checked'); }else{ echo('disabled'); }?>></td>
 											<td class="tblBandaOpcoes alignText">
-												<a href="SobreaHamburgueria.php?modo=editar&id_sobre=<?php echo($resultado['id_sobre']); ?>"><img src="imagens/edit.png"></a>
-												<a href="SobreaHamburgueria.php?modo=excluir&id_sobre=<?php echo($resultado['id_sobre']); ?>"><img src="imagens/delete.png"></a>
+												<a href="SobreaHamburgueria.php?modo=editar&id_sobre=<?php echo($resultado['id_sobre']); ?>"><img src="imagens/edit.png" alt="Editar"></a>
+												<a href="SobreaHamburgueria.php?modo=excluir&id_sobre=<?php echo($resultado['id_sobre']); ?>"><img src="imagens/delete.png" alt="Excluir"></a>
 											</td>
 										</tr>
 									<?php
@@ -118,6 +139,7 @@
 						</table>
 					</div>
 					<div id="tblBandaBoxRegistro">
+						<!-- Tabela do formulário de registro-->
 						<form method="post" action="SobreaHamburgueria.php" name="frmAdmSobre" enctype="multipart/form-data">
 						<table class="tblBandaRegistro tblBandaEditar">
 							<tr id="tblBandaRegistroTitulo">

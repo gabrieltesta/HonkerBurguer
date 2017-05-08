@@ -4,7 +4,7 @@ USE `db_honkerburguer`;
 --
 -- Host: localhost    Database: db_honkerburguer
 -- ------------------------------------------------------
--- Server version	5.6.10-log
+-- Server version	5.7.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -513,6 +513,160 @@ LOCK TABLES `tbl_usuario` WRITE;
 INSERT INTO `tbl_usuario` VALUES (1,1,'Gabriel Testa','gabrielaugusto','123456','gabrielaugusto@email.com','(11)91234-5678'),(2,3,'Gabriel Lima','gabriellima','1234567','gabriel._.lima@hotmail.com','(11)98765-4321');
 /*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `vw_banda_ativa`
+--
+
+DROP TABLE IF EXISTS `vw_banda_ativa`;
+/*!50001 DROP VIEW IF EXISTS `vw_banda_ativa`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `vw_banda_ativa` AS SELECT 
+ 1 AS `id_banda`,
+ 1 AS `nome`,
+ 1 AS `titulo`,
+ 1 AS `imagem`,
+ 1 AS `descricao`,
+ 1 AS `status`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `vw_produto_informacaonutricional`
+--
+
+DROP TABLE IF EXISTS `vw_produto_informacaonutricional`;
+/*!50001 DROP VIEW IF EXISTS `vw_produto_informacaonutricional`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `vw_produto_informacaonutricional` AS SELECT 
+ 1 AS `id_produto`,
+ 1 AS `id_informacaonutricional`,
+ 1 AS `nome`,
+ 1 AS `descricao`,
+ 1 AS `preco`,
+ 1 AS `imagem`,
+ 1 AS `porcao`,
+ 1 AS `qtd_valorenergetico`,
+ 1 AS `vd_valorenergetico`,
+ 1 AS `qtd_carboidratos`,
+ 1 AS `vd_carboidratos`,
+ 1 AS `qtd_proteinas`,
+ 1 AS `vd_proteinas`,
+ 1 AS `qtd_gordurastotais`,
+ 1 AS `vd_gordurastotais`,
+ 1 AS `qtd_gordurassaturadas`,
+ 1 AS `vd_gordurassaturadas`,
+ 1 AS `qtd_fibraalimentar`,
+ 1 AS `vd_fibraalimentar`,
+ 1 AS `qtd_sodio`,
+ 1 AS `vd_sodio`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `vw_produto_promocao`
+--
+
+DROP TABLE IF EXISTS `vw_produto_promocao`;
+/*!50001 DROP VIEW IF EXISTS `vw_produto_promocao`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `vw_produto_promocao` AS SELECT 
+ 1 AS `id_produto`,
+ 1 AS `nome`,
+ 1 AS `descricao`,
+ 1 AS `preco`,
+ 1 AS `precoPromocional`,
+ 1 AS `imagem`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `vw_sobre_ativo`
+--
+
+DROP TABLE IF EXISTS `vw_sobre_ativo`;
+/*!50001 DROP VIEW IF EXISTS `vw_sobre_ativo`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `vw_sobre_ativo` AS SELECT 
+ 1 AS `id_sobre`,
+ 1 AS `nome`,
+ 1 AS `descricao`,
+ 1 AS `imagem`,
+ 1 AS `status`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `vw_banda_ativa`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vw_banda_ativa`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `vw_banda_ativa` AS select `tbl_bandaemdestaque`.`id_banda` AS `id_banda`,`tbl_bandaemdestaque`.`nome` AS `nome`,`tbl_bandaemdestaque`.`titulo` AS `titulo`,`tbl_bandaemdestaque`.`imagem` AS `imagem`,`tbl_bandaemdestaque`.`descricao` AS `descricao`,`tbl_bandaemdestaque`.`status` AS `status` from `tbl_bandaemdestaque` where (`tbl_bandaemdestaque`.`status` = 1) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `vw_produto_informacaonutricional`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vw_produto_informacaonutricional`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `vw_produto_informacaonutricional` AS select `p`.`id_produto` AS `id_produto`,`p`.`id_informacaonutricional` AS `id_informacaonutricional`,`p`.`nome` AS `nome`,`p`.`descricao` AS `descricao`,`p`.`preco` AS `preco`,`p`.`imagem` AS `imagem`,`i`.`porcao` AS `porcao`,`i`.`qtd_valorenergetico` AS `qtd_valorenergetico`,`i`.`vd_valorenergetico` AS `vd_valorenergetico`,`i`.`qtd_carboidratos` AS `qtd_carboidratos`,`i`.`vd_carboidratos` AS `vd_carboidratos`,`i`.`qtd_proteinas` AS `qtd_proteinas`,`i`.`vd_proteinas` AS `vd_proteinas`,`i`.`qtd_gordurastotais` AS `qtd_gordurastotais`,`i`.`vd_gordurastotais` AS `vd_gordurastotais`,`i`.`qtd_gordurassaturadas` AS `qtd_gordurassaturadas`,`i`.`vd_gordurassaturadas` AS `vd_gordurassaturadas`,`i`.`qtd_fibraalimentar` AS `qtd_fibraalimentar`,`i`.`vd_fibraalimentar` AS `vd_fibraalimentar`,`i`.`qtd_sodio` AS `qtd_sodio`,`i`.`vd_sodio` AS `vd_sodio` from (`tbl_produto` `p` join `tbl_informacaonutricional` `i` on((`p`.`id_informacaonutricional` = `i`.`id_informacaonutricional`))) where (`p`.`status_lanchedomes` = 1) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `vw_produto_promocao`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vw_produto_promocao`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `vw_produto_promocao` AS select `tbl_produto`.`id_produto` AS `id_produto`,`tbl_produto`.`nome` AS `nome`,`tbl_produto`.`descricao` AS `descricao`,`tbl_produto`.`preco` AS `preco`,`tbl_promocao`.`preco` AS `precoPromocional`,`tbl_produto`.`imagem` AS `imagem` from (`tbl_produto` join `tbl_promocao`) where (`tbl_produto`.`id_produto` = `tbl_promocao`.`id_produto`) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `vw_sobre_ativo`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vw_sobre_ativo`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `vw_sobre_ativo` AS select `tbl_sobreahamburgueria`.`id_sobre` AS `id_sobre`,`tbl_sobreahamburgueria`.`nome` AS `nome`,`tbl_sobreahamburgueria`.`descricao` AS `descricao`,`tbl_sobreahamburgueria`.`imagem` AS `imagem`,`tbl_sobreahamburgueria`.`status` AS `status` from `tbl_sobreahamburgueria` where (`tbl_sobreahamburgueria`.`status` = 1) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -523,4 +677,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-04-27 16:13:30
+-- Dump completed on 2017-05-07 22:41:16

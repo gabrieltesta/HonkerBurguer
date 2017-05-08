@@ -28,7 +28,7 @@
 	$vdSodio = "";
 	
 	//Realiza um SELECT no banco de dados cujo status está true(1), ou seja, que deve ser exibido,e que possui a informação nutricional do produto
-	$sql = "SELECT * FROM tbl_produto, tbl_informacaonutricional WHERE status_lanchedomes=1 AND tbl_produto.id_informacaonutricional = tbl_informacaonutricional.id_informacaonutricional;";
+	$sql = "SELECT * FROM vw_produto_informacaonutricional;";
 	$select = mysql_query($sql);
 	
 	if($resultado=mysql_fetch_array($select))
@@ -79,9 +79,11 @@
 					<div id="imgLancheMes">
 						<div id="precoLancheMes"><span>R$ <?php echo($preco); ?></span></div><img src="<?php echo($imagem); ?>" alt="Lanche do Mês">
 					</div>
+					<!-- Descrição do Lanche -->
 					<div class="descLancheMes">
 						<p><?php echo($descricao); ?></p>
 					</div>
+					<!-- Tabela Nutricional -->
 					<table id="tblNutricional">
 						<tr>
 							<td id="tblNutricionalTitulo" colspan="3">Tabela Nutricional</td>

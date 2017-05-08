@@ -40,6 +40,7 @@
 					<!-- Slider -->
 					<div class="rotator">
 						<ul id="rotmenu">
+							<!-- Tela 1 (Slider) -->
 							<li>
 								<a href="rot1">Honker Burguer</a>
 								<div class="infoRotator">
@@ -50,6 +51,7 @@
 									</div>
 								</div>
 							</li>
+							<!-- Tela 2 (Slider) -->
 							<li>
 								<a href="rot2">Lanche do Mês</a>
 								<div class="infoRotator">
@@ -61,6 +63,7 @@
 									</div>
 								</div>
 							</li>
+							<!-- Tela 3 (Slider) -->
 							<li>
 								<a href="rot3">Promoções</a>
 								<div class="infoRotator">
@@ -72,6 +75,7 @@
 									</div>
 								</div>
 							</li>
+							<!-- Tela 4 (Slider) -->
 							<li>
 								<a href="rot4">Banda em destaque</a>
 								<div class="infoRotator">
@@ -94,7 +98,7 @@
 							</div>
 						</div>		
 					</div>
-					<!---->
+					<!-- Menu de categorias -->
 					<div id="menuSecundario">
 						<ul class="listaMenuSecundario">
 						<?php
@@ -107,6 +111,7 @@
 						?>
 						</ul>
 					</div>
+					<!-- Área de produtos -->
 					<div id="areaDisplay">
 						<?php
 							$i = 0;

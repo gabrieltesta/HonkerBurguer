@@ -20,8 +20,9 @@
 	$profissao = "";
 	$feedback = "";
 	
-	if (isset($_GET['idfaleconosco']))
+	if (isset($_GET['modo']))
 	{
+		//Verifica o modo a ser executado
 		if ($_GET['modo'] == 'excluir')
 		{
 			//Exclui o registro referente no banco de dados

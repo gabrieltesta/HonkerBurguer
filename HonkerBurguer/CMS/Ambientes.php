@@ -109,6 +109,7 @@
 			<section id="conteudoBanda">
 				<div id="conteudo">
 					<div id="tblBandaBox">
+						<!-- Tabela de registros -->
 						<table id="tblBanda">
 							<tr>
 								<th>Título</th>
@@ -143,6 +144,7 @@
 							
 						</table>
 					</div>
+					<!-- Tabela de formulário de registro -->
 					<div id="tblBandaBoxRegistro">
 						<form method="post" action="Ambientes.php" name="frmAdmBanda" enctype="multipart/form-data">
 						<table class="tblBandaRegistro tblBandaEditar">

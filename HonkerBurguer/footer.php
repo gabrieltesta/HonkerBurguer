@@ -1,5 +1,6 @@
 <!-- Rodapé -->
 <footer>
+	<!-- Tabela de dados do footer -->
 	<table>
 		<tr>
 			<td colspan="2" class="footerTitulo">

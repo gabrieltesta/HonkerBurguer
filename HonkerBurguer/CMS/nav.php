@@ -3,6 +3,7 @@
 	// Verifica a página atual, e implementa uma div se for a página referente
 	$paginaAtual = basename($_SERVER['PHP_SELF']);
 	
+	// Se a página atual for AdmConteudo.php
 	if ($paginaAtual == 'AdmConteudo.php')
 	{
 		?>
@@ -50,6 +51,7 @@
 		</nav>
 		<?php
 	}
+	// Se a página atual for AdmFaleConosco.php
 	else if ($paginaAtual == 'AdmFaleConosco.php')
 	{
 		?>
@@ -97,6 +99,7 @@
 		</nav>
 		<?php
 	}
+	// Se a página atual for AdmProdutos.php
 	else if ($paginaAtual == 'AdmProdutos.php')
 	{
 		?>
@@ -144,6 +147,7 @@
 		</nav>
 		<?php
 	}
+	// Se a página atual for MenuUsuario.php
 	else if ($paginaAtual == 'MenuUsuario.php')
 	{
 		?>
@@ -191,6 +195,7 @@
 		</nav>
 		<?php
 	}
+	// Se a página atual não for nenhuma das categorias
 	else
 	{
 		?>

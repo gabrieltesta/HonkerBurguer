@@ -52,7 +52,9 @@
 			<?php require('header.php'); ?>
 			<?php require('nav.php'); ?>
 			<section id="sectionIndex">
+				<!-- Imagem de boas vindas -->
 				<div id="indexHeader"></div>
+				<!-- Caixas de seleção de categorias -->
 				<div class="opcaoIndex">
 					<h3>Adm. Conteúdo</h3>
 					<img src="imagens/conteudo.png" alt="Adm. Conteúdo">
