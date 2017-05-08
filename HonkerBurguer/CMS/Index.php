@@ -53,7 +53,9 @@
 			<?php require('nav.php'); ?>
 			<section id="sectionIndex">
 				<!-- Imagem de boas vindas -->
-				<div id="indexHeader"></div>
+				<div id="indexHeader">
+					<img src="imagens/welcome.jpg" alt="Bem Vindo">
+				</div>
 				<!-- Caixas de seleção de categorias -->
 				<div class="opcaoIndex">
 					<h3>Adm. Conteúdo</h3>
