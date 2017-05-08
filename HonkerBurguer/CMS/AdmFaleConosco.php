@@ -102,7 +102,7 @@
 								<td><div class="cellOverflow"><?php echo($rs['feedback']);?></div></td>
 								<td class="alignText">
 									<a href="AdmFaleConosco.php?modo=visualizar&idfaleconosco=<?php echo($rs['idfaleconosco']) ?>"><img src="imagens/find.png" alt="Visualizar"></a>
-									<a href="AdmFaleConosco.php?modo=excluir&idfaleconosco=<?php echo($rs['idfaleconosco']) ?>"><img src="imagens/delete.png" alt="Excluir"></a>
+									<a href="AdmFaleConosco.php?modo=excluir&idfaleconosco=<?php echo($rs['idfaleconosco']) ?>"><img src="imagens/delete.png" alt="Excluir" onClick="return confirm('Deseja mesmo excluir esse registro?')"></a>
 								</td>
 							</tr>
 						<?php

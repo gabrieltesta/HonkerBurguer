@@ -135,7 +135,7 @@
 											<td class="tblBandaNome"><?php echo($resultado['email']); ?></td>
 											<td class="tblBandaOpcoes alignText">
 												<a href="Ambientes.php?modo=editar&id_ambiente=<?php echo($resultado['id_ambiente']); ?>"><img src="imagens/edit.png" alt="Editar"></a>
-												<a href="Ambientes.php?modo=excluir&id_ambiente=<?php echo($resultado['id_ambiente']); ?>"><img src="imagens/delete.png" alt="Excluir"></a>
+												<a href="Ambientes.php?modo=excluir&id_ambiente=<?php echo($resultado['id_ambiente']); ?>"><img src="imagens/delete.png" alt="Excluir" onClick="return confirm('Deseja mesmo excluir esse registro?')"></a>
 											</td>
 										</tr>
 									<?php

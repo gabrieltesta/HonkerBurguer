@@ -96,7 +96,7 @@
 										<td><?php echo($resultado['nome']); ?></td>
 										<td class="alignText">
 											<a href="AdmNivelUsuario.php?modo=editar&idnivel=<?php echo($resultado['id_nivel_usuario']); ?>"><img src="imagens/edit.png" alt="Editar"></a>
-											<a href="AdmNivelUsuario.php?modo=excluir&idnivel=<?php echo($resultado['id_nivel_usuario']); ?>"><img src="imagens/delete.png" alt="Excluir"></a>
+											<a href="AdmNivelUsuario.php?modo=excluir&idnivel=<?php echo($resultado['id_nivel_usuario']); ?>"><img src="imagens/delete.png" alt="Excluir" onClick="return confirm('Deseja mesmo excluir esse registro?')"></a>
 										</td>
 									</tr>
 									<?php

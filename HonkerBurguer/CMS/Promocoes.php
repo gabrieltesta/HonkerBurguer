@@ -110,7 +110,7 @@
 											<td class="tblBandaNome alignText"><?php echo($resultado['precoPromocional']); ?></td>
 											<td class="tblBandaOpcoes alignText">
 												<a href="Promocoes.php?modo=editar&id_promocao=<?php echo($resultado['id_promocao']); ?>"><img src="imagens/edit.png" alt="Editar"></a>
-												<a href="Promocoes.php?modo=excluir&id_promocao=<?php echo($resultado['id_promocao']); ?>"><img src="imagens/delete.png" alt="Excluir"></a>
+												<a href="Promocoes.php?modo=excluir&id_promocao=<?php echo($resultado['id_promocao']); ?>"><img src="imagens/delete.png" alt="Excluir" onClick="return confirm('Deseja mesmo excluir esse registro?')"></a>
 											</td>
 										</tr>
 									<?php

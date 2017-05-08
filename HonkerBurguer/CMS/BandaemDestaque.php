@@ -136,7 +136,7 @@
 											<td class="tblBandaStatus alignText"><input type="radio" <?php if($resultado['status'] == 1){ echo('checked'); }else{ echo('disabled'); }?>></td>
 											<td class="tblBandaOpcoes alignText">
 												<a href="BandaemDestaque.php?modo=editar&id_banda=<?php echo($resultado['id_banda']); ?>"><img src="imagens/edit.png" alt="Editar"></a>
-												<a href="BandaemDestaque.php?modo=excluir&id_banda=<?php echo($resultado['id_banda']); ?>"><img src="imagens/delete.png" alt="Excluir"></a>
+												<a href="BandaemDestaque.php?modo=excluir&id_banda=<?php echo($resultado['id_banda']); ?>"><img src="imagens/delete.png" alt="Excluir" onClick="return confirm('Deseja mesmo excluir esse registro?')"></a>
 											</td>
 										</tr>
 									<?php

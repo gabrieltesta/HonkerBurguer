@@ -123,7 +123,7 @@
 								<td><?php echo($rs['telefone']); ?></td>
 								<td class="alignText">
 									<a href="AdmUsuarios.php?modo=editar&id_usuario=<?php echo($rs['id_usuario']); ?>"><img src="imagens/edit.png" alt="Editar"></a>
-									<a href="AdmUsuarios.php?modo=excluir&id_usuario=<?php echo($rs['id_usuario']); ?>"><img src="imagens/delete.png" alt="Excluir"></a>
+									<a href="AdmUsuarios.php?modo=excluir&id_usuario=<?php echo($rs['id_usuario']); ?>"><img src="imagens/delete.png" alt="Excluir" onClick="return confirm('Deseja mesmo excluir esse registro?')"></a>
 								</td>
 							</tr>
 						<?php
