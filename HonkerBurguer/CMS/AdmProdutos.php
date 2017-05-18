@@ -7,6 +7,15 @@
 <?php 
 	session_start();
 	require('checkLogin.php');
+	if($_SESSION['produtos']==0)
+	{
+		?>
+		<script>
+			alert('Você não tem permissão para visualizar esta página');
+			location='Index.php';
+		</script>
+		<?php
+	}
 ?>
 <!DOCTYPE html>
 <html lang="pt">

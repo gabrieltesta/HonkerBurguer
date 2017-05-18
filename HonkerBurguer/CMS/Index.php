@@ -18,7 +18,7 @@
 		$senha = $_POST['txtSenha'];
 
 		//Realiza o SELECT no banco de dados, verificando se o login e a senha forem iguais os registrados no banco de dados
-		$sql = "select tbl_usuario.nome, login, senha, tbl_nivel_usuario.nome as cargo from tbl_usuario, tbl_nivel_usuario where tbl_usuario.id_nivel_usuario = tbl_nivel_usuario.id_nivel_usuario and login='".$login."' and senha='".$senha."';";
+		$sql = "SELECT u.nome, u.login, u.senha, n.nome as cargo, n.acessoAdmin, n.acessoSite, n.acessoProdutos FROM tbl_usuario as u INNER JOIN tbl_nivel_usuario as n ON u.id_nivel_usuario = n.id_nivel_usuario WHERE login='".$login."' and senha='".$senha."';";
 		$select = mysql_query($sql);
 		
 		//Caso nenhuma linha for encontrada, retorna a página Index do site principal, com o parâmetro login
@@ -32,6 +32,9 @@
 			$_SESSION['logado'] = true;
 			$_SESSION['nome'] = $rsconsulta['nome'];
 			$_SESSION['cargo'] = $rsconsulta['cargo'];
+			$_SESSION['admin'] = $rsconsulta['acessoAdmin'];
+			$_SESSION['site'] = $rsconsulta['acessoSite'];
+			$_SESSION['produtos'] = $rsconsulta['acessoProdutos'];
 		}
 	}
 	else
@@ -64,15 +67,15 @@
 				</div>
 				<div class="opcaoIndex">
 					<h3>Adm. Fale Conosco</h3>
-					<img src="imagens/faleconosco.png" alt="Adm. Fale Conosco">
+					<img src="imagens/faleconosco.png" alt="Adm. Fale Conosco" <?php if($allowFaleConosco == 0){ echo('style="filter: grayscale(100%)"'); } ?>>
 					<a href="AdmFaleConosco.php"><div><span>Entrar</span></div></a>
 				</div><div class="opcaoIndex">
 					<h3>Adm. Produtos</h3>
-					<img src="imagens/produtos.png" alt="Adm. Produtos">
+					<img src="imagens/produtos.png" alt="Adm. Produtos" <?php if($allowProdutos == 0){ echo('style="filter: grayscale(100%)"'); } ?>>
 					<a href="AdmProdutos.php"><div><span>Entrar</span></div></a>
 				</div><div class="opcaoIndex">
 					<h3>Adm. Usuários</h3>
-					<img src="imagens/usuarios.png" alt="Adm. Usuarios">
+					<img src="imagens/usuarios.png" alt="Adm. Usuarios" <?php if($allowUsuarios == 0){ echo('style="filter: grayscale(100%)"'); } ?>>
 					<a href="MenuUsuario.php"><div><span>Entrar</span></div></a>
 				</div>
 			</section>

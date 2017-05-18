@@ -16,6 +16,16 @@
 	$telefone = "";
 	$email = "";
 	
+	if($_SESSION['site']==0)
+	{
+		?>
+		<script>
+			alert('Você não tem permissão para visualizar esta página');
+			location='Index.php';
+		</script>
+		<?php
+	}
+	
 	//Verifica qual modo está sendo executado
 	if (isset($_GET['modo']))
 	{

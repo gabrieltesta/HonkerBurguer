@@ -103,11 +103,6 @@ nav
 	display: inline-block;
 }
 
-.itemMenu:hover
-{
-	border: solid 1px orange;
-	height: 198px;	width: 200px;
-}
 
 .itemMenuImagem
 {
@@ -125,13 +120,13 @@ nav
 .itemMenuTitulo
 {
 	text-align:center;
-	margin-top: -5px;
+	margin-top: -200px;
 }
 
 .paginaSelecionada
 {
 	border: solid 1px orange;
-	height: 198px;
+	height: 180px;
 	color: orange;
 }
 
@@ -601,12 +596,18 @@ footer p
 {
 	background-color: #f2eee7;
 	height: 50px;
+	max-width: 75px;
 }
 
 .tblNivelUsuario td
 {
 	border-bottom: solid 1px #f2eee7;
 	border-right: solid 1px #f2eee7;
+}
+
+.tblNivelUsuario input[type=radio]
+{
+	margin-left: 5%;
 }
 
 #thNomeNivel

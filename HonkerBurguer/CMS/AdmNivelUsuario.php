@@ -9,9 +9,22 @@
 	require('checkLogin.php');
 	require_once('conectarMySQL.php');
 	
+	if($_SESSION['admin']==0)
+	{
+		?>
+		<script>
+			alert('Você não tem permissão para visualizar esta página');
+			location='Index.php';
+		</script>
+		<?php
+	}
+	
 	$nome = "";
 	$id_usuario = "";
 	$modo = "Salvar";
+	$statusAdmin = "";
+	$statusSite = "";
+	$statusProdutos = "";
 	
 	if(isset($_GET['modo']))
 	{
@@ -28,6 +41,9 @@
 			{
 				$id_usuario = $rs['id_nivel_usuario'];
 				$nome = $rs['nome'];
+				$statusAdmin = $rs['acessoAdmin'];
+				$statusSite = $rs['acessoSite'];
+				$statusProdutos = $rs['acessoProdutos'];
 			}
 			
 		}
@@ -46,18 +62,24 @@
 		if($_POST['btnSalvar'] == 'Editar')
 		{
 			$nome = $_POST['txtNivelNome'];
+			$admin = $_POST['radAdmin'];
+			$site = $_POST['radSite'];
+			$produtos = $_POST['radProdutos'];
 			
 			//Edita o registro referente no banco de dados
-			$sql = "UPDATE tbl_nivel_usuario SET nome='".$nome."' WHERE id_nivel_usuario='".$id_usuario."';";
+			$sql = "UPDATE tbl_nivel_usuario SET nome='".$nome."', acessoAdmin='".$admin."', acessoSite='".$site."', acessoProdutos='".$produtos."' WHERE id_nivel_usuario='".$id_usuario."';";
 			mysql_query($sql);
 			header('location:AdmNivelUsuario.php');
 		}
 		if($_POST['btnSalvar'] == 'Salvar')
 		{
 			$nome = $_POST['txtNivelNome'];
+			$admin = $_POST['radAdmin'];
+			$site = $_POST['radSite'];
+			$produtos = $_POST['radProdutos'];
 			
 			//Insere no banco de dados as informações nas caixas de registro
-			$sql = "INSERT INTO tbl_nivel_usuario(nome) VALUES('".$nome."')";
+			$sql = "INSERT INTO tbl_nivel_usuario(nome, acessoAdmin, acessoSite, acessoProdutos) VALUES('".$nome."', '".$admin."', '".$site."', '".$produtos."')";
 			mysql_query($sql);
 			header('location:AdmNivelUsuario.php');
 		}
@@ -114,6 +136,63 @@
 							<tr>
 								<th>Nome</th>
 								<td><input type="text" name="txtNivelNome" value="<?php echo($nome); ?>" required><input type="hidden" name="txtIdNivel" value="<?php echo($_GET['idnivel']); ?>"></td>
+							</tr>
+							<tr>
+								<th>Permissões Admin.</th>
+								<td>
+									<?php
+										if($modo == "Editar")
+										{?>
+											<input type="radio" name="radAdmin" value="1" <?php if($statusAdmin == 1){ echo('checked'); }?> required>Sim
+											<input type="radio" name="radAdmin" value="0" <?php if($statusAdmin == 0){ echo('checked'); }?> required>Não
+									<?php
+										}
+										else
+										{?>
+											<input type="radio" name="radAdmin" value="1" required>Sim
+											<input type="radio" name="radAdmin" value="0" required>Não
+									<?php
+										}
+									?>
+								</td>
+							</tr>
+							<tr>
+								<th>Permissões Site</th>
+								<td>
+								<?php
+									if($modo == "Editar")
+									{?>
+										<input type="radio" name="radSite" value="1" <?php if($statusSite == 1){ echo('checked'); }?> required>Sim
+										<input type="radio" name="radSite" value="0" <?php if($statusSite == 0){ echo('checked'); } ?> required>Não
+								<?php
+									}
+									else
+									{?>
+										<input type="radio" name="radSite" value="1" required>Sim
+										<input type="radio" name="radSite" value="0" required>Não
+								<?php
+									}
+								?>
+								</td>
+							</tr>
+							<tr>
+								<th>Permissões Produtos</th>
+								<td>
+								<?php
+									if($modo == "Editar")
+									{?>
+										<input type="radio" name="radProdutos" value="1" <?php if($statusProdutos == 1){ echo('checked'); }?> required>Sim
+										<input type="radio" name="radProdutos" value="0" <?php if($statusProdutos == 0){ echo('checked'); } ?> required>Não
+								<?php
+									}
+									else
+									{?>
+										<input type="radio" name="radProdutos" value="1" required>Sim
+										<input type="radio" name="radProdutos" value="0" required>Não
+								<?php
+									}
+								?>
+								</td>
 							</tr>
 							<?php
 							if($modo == 'Salvar')

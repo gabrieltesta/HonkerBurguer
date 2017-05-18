@@ -9,6 +9,16 @@
 	require('checkLogin.php');
 	require_once('conectarMySQL.php');
 	
+	if($_SESSION['admin']==0)
+	{
+		?>
+		<script>
+			alert('Você não tem permissão para visualizar esta página');
+			location='Index.php';
+		</script>
+		<?php
+	}
+	
 	$nome = "";
 	$sexo = "";
 	$telefone = "";

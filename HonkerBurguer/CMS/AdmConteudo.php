@@ -25,38 +25,38 @@
 				<div id="conteudo">
 					<table id="tblConteudo">
 						<tr>
-							<td class="conteudoImage"><img src="imagens/AdmConteudo/home.png" alt="Home"></td>
+							<td class="conteudoImage"><img src="imagens/AdmConteudo/home.png" alt="Home" <?php if($allowProdutos == 0){ echo('style="filter: grayscale(100%)"'); } ?>></td>
 							<td class="conteudoTitulo"><span>Home</span></td>
 						</tr>
 						<tr>
-							<td class="conteudoImage"><img src="imagens/AdmConteudo/bandaemdestaque.png" alt="Banda em Destaque"></td>
+							<td class="conteudoImage"><img src="imagens/AdmConteudo/bandaemdestaque.png" alt="Banda em Destaque" <?php if($allowSite == 0){ echo('style="filter: grayscale(100%)"'); } ?>></td>
 							<td class="conteudoTitulo"><span><a href="BandaemDestaque.php">Banda em Destaque</a></span></td>
 						</tr>
 						<tr>
-							<td class="conteudoImage"><img src="imagens/AdmConteudo/sobre.png" alt="Sobre a Hamburgueria"></td>
+							<td class="conteudoImage"><img src="imagens/AdmConteudo/sobre.png" alt="Sobre a Hamburgueria" <?php if($allowSite == 0){ echo('style="filter: grayscale(100%)"'); } ?>></td>
 							<td class="conteudoTitulo"><span><a href="SobreaHamburgueria.php">Sobre a Hamburgueria</a></span></td>
 						</tr>
 						<tr>
-							<td class="conteudoImage"><img src="imagens/AdmConteudo/promocao.png" alt="Promoções"></td>
+							<td class="conteudoImage"><img src="imagens/AdmConteudo/promocao.png" alt="Promoções" <?php if($allowSite == 0){ echo('style="filter: grayscale(100%)"'); } ?>></td>
 							<td class="conteudoTitulo"><span><a href="Promocoes.php">Promoções</a></span></td>
 						</tr>
 						
 					</table>
 					<table id="tblConteudoRight">
 						<tr>
-							<td class="conteudoImage"><img src="imagens/AdmConteudo/ambiente.gif" alt="Ambientes"></td>
+							<td class="conteudoImage"><img src="imagens/AdmConteudo/ambiente.gif" alt="Ambientes" <?php if($allowSite == 0){ echo('style="filter: grayscale(100%)"'); } ?>></td>
 							<td class="conteudoTitulo"><span><a href="Ambientes.php">Ambientes</a></span></td>
 						</tr>
 						<tr>
-							<td class="conteudoImage"><img src="imagens/AdmConteudo/lanche.png" alt="Lanche do Mês"></td>
+							<td class="conteudoImage"><img src="imagens/AdmConteudo/lanche.png" alt="Lanche do Mês" <?php if($allowSite == 0){ echo('style="filter: grayscale(100%)"'); } ?>></td>
 							<td class="conteudoTitulo"><span><a href="LanchedoMes.php">Lanche do Mês</a></span></td>
 						</tr>
 						<tr>
-							<td class="conteudoImage"><img src="imagens/AdmConteudo/redessociais.png" alt="Redes Sociais"></td>
+							<td class="conteudoImage"><img src="imagens/AdmConteudo/redessociais.png" alt="Redes Sociais" <?php if($allowSite == 0){ echo('style="filter: grayscale(100%)"'); } ?>></td>
 							<td class="conteudoTitulo"><span>Redes Sociais</span></td>
 						</tr>
 						<tr>
-							<td class="conteudoImage"><img src="imagens/AdmConteudo/rodape.png" alt="Rodapé"></td>
+							<td class="conteudoImage"><img src="imagens/AdmConteudo/rodape.png" alt="Rodapé" <?php if($allowSite == 0){ echo('style="filter: grayscale(100%)"'); } ?>></td>
 							<td class="conteudoTitulo"><span>Rodapé</span></td>
 						</tr>
 					</table>

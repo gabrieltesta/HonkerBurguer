@@ -16,6 +16,16 @@
 	$precoPromocional = "";
 	$id_promocao = "";
 	
+	if($_SESSION['site']==0)
+	{
+		?>
+		<script>
+			alert('Você não tem permissão para visualizar esta página');
+			location='Index.php';
+		</script>
+		<?php
+	}
+	
 	//Realiza um SELECT no banco de dados dos produtos para seleção
 	$sql = "SELECT id_produto, nome FROM tbl_produto ORDER BY nome;";
 	$selectsalvar = mysql_query($sql);

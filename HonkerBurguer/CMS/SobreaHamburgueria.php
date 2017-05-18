@@ -14,6 +14,16 @@
 	$descricao = "";
 	$status = "";
 	
+	if($_SESSION['site']==0)
+	{
+		?>
+		<script>
+			alert('Você não tem permissão para visualizar esta página');
+			location='Index.php';
+		</script>
+		<?php
+	}
+	
 	if (isset($_GET['modo']))
 	{
 		//Verifica o modo a ser executado
