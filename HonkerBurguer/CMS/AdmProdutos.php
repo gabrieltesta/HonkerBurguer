@@ -29,7 +29,19 @@
 		<h2 style="display: none;">Adm. Produtos</h2>
 			<?php require('header.php'); ?>
 			<?php require('nav.php'); ?>
-			<section>
+			<!-- Área de seleção de categoria -->
+			<section id="sectionMenuUsuario">
+				<h2>Menu de Produtos</h2>
+				<div class="opcaoIndex menuUsuarioOption">
+					<h3>Adm. Produtos</h3>
+					<img src="imagens/produtos2.png" alt="Adm. Usuários" style="margin-left:-5px;">
+					<a href="Produtos.php"><div><span>Entrar</span></div></a>
+				</div>
+				<div class="opcaoIndex menuUsuarioOption">
+					<h3>Adm. Categorias	</h3>
+					<img src="imagens/categorias.png" alt="Adm. Níveis">
+					<a href="CategoriasProdutos.php"><div><span>Entrar</span></div></a>
+				</div>
 			</section>
 			<?php require('footer.php'); ?>
 		</div>
