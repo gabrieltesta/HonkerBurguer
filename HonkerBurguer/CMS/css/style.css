@@ -568,7 +568,7 @@ footer p
 	overflow-y: auto;
 	overflow-x: hidden;
 	width: 617px;
-	height: 400px;
+	height: 250px;
 	margin-left: 5%;
 	margin-top: 5%;
 	float:left;
@@ -586,7 +586,7 @@ footer p
 
 #tblNivelUsuarioBox
 {
-	height: 600px;
+	height: 300px;
 	display: inline-block;
 	width: 100%;
 
@@ -610,9 +610,37 @@ footer p
 	margin-left: 5%;
 }
 
+.tblNivelUsuario textarea
+{
+	margin-left: 5%;
+	resize: none;
+	width: 89%;
+}
+
+.tblNivelUsuario input[type=file]
+{
+	margin-left: 5%;
+}
+
+.tblNivelUsuario select
+{
+	margin-left: 5%;
+	width: 91%;
+}
+
+.thInformacao
+{
+	width: 42.5%;
+}
+
 #thNomeNivel
 {
 	width: 85%;
+}
+
+.thCategorias
+{
+	width: 42.5%;
 }
 
 .tblNivelUsuario input[type=text]

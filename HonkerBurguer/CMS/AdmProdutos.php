@@ -34,12 +34,12 @@
 				<h2>Menu de Produtos</h2>
 				<div class="opcaoIndex menuUsuarioOption">
 					<h3>Adm. Produtos</h3>
-					<img src="imagens/produtos2.png" alt="Adm. Usuários" style="margin-left:-5px;">
+					<img src="imagens/produtos2.png" alt="Adm. Produtos">
 					<a href="Produtos.php"><div><span>Entrar</span></div></a>
 				</div>
 				<div class="opcaoIndex menuUsuarioOption">
 					<h3>Adm. Categorias	</h3>
-					<img src="imagens/categorias.png" alt="Adm. Níveis">
+					<img src="imagens/categorias.png" alt="Adm. Categorias">
 					<a href="CategoriasProdutos.php"><div><span>Entrar</span></div></a>
 				</div>
 			</section>

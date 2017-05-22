@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `db_honkerburguer` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `db_honkerburguer`;
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_honkerburguer
 -- ------------------------------------------------------
@@ -70,7 +70,7 @@ CREATE TABLE `tbl_bandaemdestaque` (
 
 LOCK TABLES `tbl_bandaemdestaque` WRITE;
 /*!40000 ALTER TABLE `tbl_bandaemdestaque` DISABLE KEYS */;
-INSERT INTO `tbl_bandaemdestaque` VALUES (1,'Guns n\' Roses','Guns n\' Roses','arquivo/gunsnroses.jpg','Guns N\' Roses (às vezes abreviado como G N\' R ou GnR) é uma banda de hard rock formada em Los Angeles, Califórnia (EUA), em 1985. A banda já lançou seis álbuns de estúdio, três EPs e um álbum ao vivo.\r\n\r\nA banda já vendeu mais de 100 milhões de cópias em todo o mundo,[3][4] sendo cerca de 43 milhões somente nos Estados Unidos.[5] O seu álbum de estreia lançado em 1987, Appetite for Destruction,[6] vendeu cerca de 33 milhões de cópias no mundo todo, sendo certificado 18 vezes platina pela RIAA (Associação da Indústria de Gravação da América),[7][8] se tornando o álbum de estreia mais vendido da história da música. A formação atual inclui o vocalista e pianista Axl Rose, os guitarristas Slash e Richard Fortus, o baixista Duff McKagan, o baterista Frank Ferrer[9] e os tecladistas Dizzy Reed e Melissa Reese.',1),(2,' Metallica','Metallica','arquivo/metallica2_(1).jpg','Metallica é uma banda norte-americana de heavy metal originaria de Los Angeles, mas com base em San Francisco. O seu repertório inclui tempos rápidos, pesados, melodicos, instrumentais, e musicalidade agressiva, a qual os colocou no lugar de pioneiros do thrash metal e uma das bandas fundadoras do Big Four of Thrash, conjuntamente com Slayer, Megadeth e Anthrax. O Metallica foi formado em 1981, após James Hetfield responder a um anúncio que Lars Ulrich colocou no jornal local. A sua formação atual apresenta os fundadores Ulrich (bateria) e Hetfield (vocal e guitarra base), o guitarrista Kirk Hammett (que se juntou à banda em 1983), e o baixista Robert Trujillo (membro desde 2003). Antes de chegarem à sua formação atual, a banda teve outros integrantes, sendo eles: Dave Mustaine (guitarra), Ron McGovney, Cliff Burton e Jason Newsted (baixo).\r\n\r\nCom os lançamentos de seus quatro primeiros álbuns, o Metallica ganhou uma crescente base de fãs na comunidade de música underground, e alguns críticos dizem que Master of Puppets (1986) é um dos álbuns de thrash metal mais influentes e \'pesados\'. Logo após, a banda alcançou grande sucesso comercial com o seu álbum auto-intitulado de 1991 (também conhecido como The Black Album), que já vendeu 30 milhões de cópias pelo mundo até hoje.[3] Com este lançamento a banda expandiu seu direcionamento musical, tentando atingir uma audiência mais mainstream. Com o lançamento de Load e Reload nos anos 1990, o Metallica tentou aproximar-se do rock alternativo que fazia sucesso na época para ganhar uma nova base de fãs, mas foi acusada por seus fãs antigos de \'vender-se\' para as gravadoras. Em 2000 o Metallica esteve entre os vários artistas que apresentaram uma ação judicial contra o Napster por compartilhar materiais protegidos por direitos de autor livremente sem o consentimento dos membros da banda.[4] A resolução foi tomada, e Napster se tornou um serviço de uso pago.\r\n\r\nApesar de atingir o primeiro lugar na Billboard 200, o lançamento de St. Anger em 2003 foi controverso pelas influências de nu metal e a produção musical crua de Bob Rock. O disco sucessor, Death Magnetic (2008), foi produzido por Rick Rubin e recebeu avaliações mais favoráveis. Mais tarde, a discografia de estúdio do conjunto somou o álbum Lulu (2011), em parceria com Lou Reed e que recebeu críticas mistas. Em 2012, a banda fundou sua própria gravadora, chamada Blackened Recordings, e adquiriu os direitos de todos os seus álbuns de estúdio.[5] Seu disco mais recente é Hardwired...to Self-Destruct, lançado no fim de 2016. Em mais de 30 anos de carreira, o Metallica já lançou dez álbuns de estúdio, quatro álbuns ao vivo, dez álbuns de vídeo, dentre outros. Tornou-se uma das bandas mais influentes e bem sucedidas de todos os tempos, tendo vendido cerca de 110 milhões de discos no mundo inteiro.[6] A banda já recebeu oito premiações no Grammy Awards, entrou para o Rock and Roll Hall of Fame em 2009 e tem seis álbuns consecutivos em primeiro lugar na Billboard 200.[7]',0);
+INSERT INTO `tbl_bandaemdestaque` VALUES (1,'Guns n\' Roses','Guns n\' Roses','arquivo/gunsnroses.jpg','Guns N\' Roses (às vezes abreviado como G N\' R ou GnR) é uma banda de hard rock formada em Los Angeles, Califórnia (EUA), em 1985. A banda já lançou seis álbuns de estúdio, três EPs e um álbum ao vivo.\r\n\r\nA banda já vendeu mais de 100 milhões de cópias em todo o mundo,[3][4] sendo cerca de 43 milhões somente nos Estados Unidos.[5] O seu álbum de estreia lançado em 1987, Appetite for Destruction,[6] vendeu cerca de 33 milhões de cópias no mundo todo, sendo certificado 18 vezes platina pela RIAA (Associação da Indústria de Gravação da América),[7][8] se tornando o álbum de estreia mais vendido da história da música. A formação atual inclui o vocalista e pianista Axl Rose, os guitarristas Slash e Richard Fortus, o baixista Duff McKagan, o baterista Frank Ferrer[9] e os tecladistas Dizzy Reed e Melissa Reese.',0),(2,' Metallica','Metallica','arquivo/metallica2_(1).jpg','Metallica é uma banda norte-americana de heavy metal originaria de Los Angeles, mas com base em San Francisco. O seu repertório inclui tempos rápidos, pesados, melodicos, instrumentais, e musicalidade agressiva, a qual os colocou no lugar de pioneiros do thrash metal e uma das bandas fundadoras do Big Four of Thrash, conjuntamente com Slayer, Megadeth e Anthrax. O Metallica foi formado em 1981, após James Hetfield responder a um anúncio que Lars Ulrich colocou no jornal local. A sua formação atual apresenta os fundadores Ulrich (bateria) e Hetfield (vocal e guitarra base), o guitarrista Kirk Hammett (que se juntou à banda em 1983), e o baixista Robert Trujillo (membro desde 2003). Antes de chegarem à sua formação atual, a banda teve outros integrantes, sendo eles: Dave Mustaine (guitarra), Ron McGovney, Cliff Burton e Jason Newsted (baixo).\r\n\r\nCom os lançamentos de seus quatro primeiros álbuns, o Metallica ganhou uma crescente base de fãs na comunidade de música underground, e alguns críticos dizem que Master of Puppets (1986) é um dos álbuns de thrash metal mais influentes e \'pesados\'. Logo após, a banda alcançou grande sucesso comercial com o seu álbum auto-intitulado de 1991 (também conhecido como The Black Album), que já vendeu 30 milhões de cópias pelo mundo até hoje.[3] Com este lançamento a banda expandiu seu direcionamento musical, tentando atingir uma audiência mais mainstream. Com o lançamento de Load e Reload nos anos 1990, o Metallica tentou aproximar-se do rock alternativo que fazia sucesso na época para ganhar uma nova base de fãs, mas foi acusada por seus fãs antigos de \'vender-se\' para as gravadoras. Em 2000 o Metallica esteve entre os vários artistas que apresentaram uma ação judicial contra o Napster por compartilhar materiais protegidos por direitos de autor livremente sem o consentimento dos membros da banda.[4] A resolução foi tomada, e Napster se tornou um serviço de uso pago.\r\n\r\nApesar de atingir o primeiro lugar na Billboard 200, o lançamento de St. Anger em 2003 foi controverso pelas influências de nu metal e a produção musical crua de Bob Rock. O disco sucessor, Death Magnetic (2008), foi produzido por Rick Rubin e recebeu avaliações mais favoráveis. Mais tarde, a discografia de estúdio do conjunto somou o álbum Lulu (2011), em parceria com Lou Reed e que recebeu críticas mistas. Em 2012, a banda fundou sua própria gravadora, chamada Blackened Recordings, e adquiriu os direitos de todos os seus álbuns de estúdio.[5] Seu disco mais recente é Hardwired...to Self-Destruct, lançado no fim de 2016. Em mais de 30 anos de carreira, o Metallica já lançou dez álbuns de estúdio, quatro álbuns ao vivo, dez álbuns de vídeo, dentre outros. Tornou-se uma das bandas mais influentes e bem sucedidas de todos os tempos, tendo vendido cerca de 110 milhões de discos no mundo inteiro.[6] A banda já recebeu oito premiações no Grammy Awards, entrou para o Rock and Roll Hall of Fame em 2009 e tem seis álbuns consecutivos em primeiro lugar na Billboard 200.[7]',1);
 /*!40000 ALTER TABLE `tbl_bandaemdestaque` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,10 +82,10 @@ DROP TABLE IF EXISTS `tbl_categoria`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_categoria` (
-  `id_categoria` int(11) NOT NULL,
+  `id_categoria` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
   PRIMARY KEY (`id_categoria`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,6 +94,7 @@ CREATE TABLE `tbl_categoria` (
 
 LOCK TABLES `tbl_categoria` WRITE;
 /*!40000 ALTER TABLE `tbl_categoria` DISABLE KEYS */;
+INSERT INTO `tbl_categoria` VALUES (1,'Lanches de carne'),(2,'Lanches de frango'),(3,'Lanches de peixes'),(4,'Bebidas'),(19,'Vegetarianos');
 /*!40000 ALTER TABLE `tbl_categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,32 +181,6 @@ LOCK TABLES `tbl_home_slider` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tbl_home_submenu`
---
-
-DROP TABLE IF EXISTS `tbl_home_submenu`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_home_submenu` (
-  `id_home` int(11) NOT NULL,
-  `id_submenu` int(11) NOT NULL,
-  KEY `fk_tbl_home_submenu_tbl_home1_idx` (`id_home`),
-  KEY `fk_tbl_home_submenu_tbl_submenu1_idx` (`id_submenu`),
-  CONSTRAINT `fk_tbl_home_submenu_tbl_home1` FOREIGN KEY (`id_home`) REFERENCES `tbl_home` (`id_home`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_home_submenu_tbl_submenu1` FOREIGN KEY (`id_submenu`) REFERENCES `tbl_submenu` (`id_submenu`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_home_submenu`
---
-
-LOCK TABLES `tbl_home_submenu` WRITE;
-/*!40000 ALTER TABLE `tbl_home_submenu` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_home_submenu` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `tbl_informacaonutricional`
 --
 
@@ -214,6 +189,7 @@ DROP TABLE IF EXISTS `tbl_informacaonutricional`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_informacaonutricional` (
   `id_informacaonutricional` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
   `porcao` varchar(50) NOT NULL,
   `qtd_valorenergetico` varchar(15) NOT NULL,
   `vd_valorenergetico` varchar(4) NOT NULL,
@@ -239,7 +215,7 @@ CREATE TABLE `tbl_informacaonutricional` (
 
 LOCK TABLES `tbl_informacaonutricional` WRITE;
 /*!40000 ALTER TABLE `tbl_informacaonutricional` DISABLE KEYS */;
-INSERT INTO `tbl_informacaonutricional` VALUES (4,'361','677','34','54','18','37','4','35','64','19','86','2','8','1457','61'),(5,'474','996','50','54','18','64','85','5','107','27','123','2','8','1551','65'),(6,'196','36','18','32','11','21','28','18','33','1','4','2','8','631','26');
+INSERT INTO `tbl_informacaonutricional` VALUES (4,'AC/DC','361','677','34','54','18','37','4','35','64','19','86','2','8','1457','61'),(5,'Guns n\' Roses','474','996','50','54','18','64','85','5','107','27','123','2','8','1551','65'),(6,'Beatles','196','36','18','32','11','21','28','18','33','1','4','2','8','631','26');
 /*!40000 ALTER TABLE `tbl_informacaonutricional` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -253,8 +229,11 @@ DROP TABLE IF EXISTS `tbl_nivel_usuario`;
 CREATE TABLE `tbl_nivel_usuario` (
   `id_nivel_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(50) NOT NULL,
+  `acessoAdmin` tinyint(4) NOT NULL DEFAULT '0',
+  `acessoSite` tinyint(4) NOT NULL DEFAULT '0',
+  `acessoProdutos` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_nivel_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -263,7 +242,7 @@ CREATE TABLE `tbl_nivel_usuario` (
 
 LOCK TABLES `tbl_nivel_usuario` WRITE;
 /*!40000 ALTER TABLE `tbl_nivel_usuario` DISABLE KEYS */;
-INSERT INTO `tbl_nivel_usuario` VALUES (1,'Administrador'),(2,'Operador Básico'),(3,'Cataloguista');
+INSERT INTO `tbl_nivel_usuario` VALUES (1,'Administrador',1,1,1),(2,'Operador Básico',0,1,0),(3,'Cataloguista',0,0,1);
 /*!40000 ALTER TABLE `tbl_nivel_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -276,7 +255,7 @@ DROP TABLE IF EXISTS `tbl_produto`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_produto` (
   `id_produto` int(11) NOT NULL AUTO_INCREMENT,
-  `id_informacaonutricional` int(11) NOT NULL,
+  `id_informacaonutricional` int(11) DEFAULT NULL,
   `nome` varchar(50) NOT NULL,
   `descricao` text NOT NULL,
   `preco` float(5,2) NOT NULL,
@@ -285,7 +264,7 @@ CREATE TABLE `tbl_produto` (
   PRIMARY KEY (`id_produto`),
   KEY `fk_tbl_produto_tbl_informacaonutricional1_idx` (`id_informacaonutricional`),
   CONSTRAINT `info_produto` FOREIGN KEY (`id_informacaonutricional`) REFERENCES `tbl_informacaonutricional` (`id_informacaonutricional`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -294,7 +273,7 @@ CREATE TABLE `tbl_produto` (
 
 LOCK TABLES `tbl_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_produto` DISABLE KEYS */;
-INSERT INTO `tbl_produto` VALUES (4,4,'AC/DC','Pão com gergelim, um suculento hambúrguer de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',20.00,'arquivo/Burger1.jpg',0),(5,6,'Beatles','Pão com gergelim, um saboroso hambúrguer de pura carne bovina, uma fatia de queijo derretido, duas fatias de picles, alface, tomate, cebola, maionese e catchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',15.00,'arquivo/Burger1.jpg',0),(6,5,'Guns n\' Roses','Pão com gergelim, dois suculentos hambúrgueres de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',30.00,'arquivo/Burger1.jpg',1);
+INSERT INTO `tbl_produto` VALUES (4,4,'AC/DC','Pão com gergelim, um suculento hambúrguer de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',20.00,'arquivo/Burger1.jpg',0),(5,6,'Beatles','Pão com gergelim, um saboroso hambúrguer de pura carne bovina, uma fatia de queijo derretido, duas fatias de picles, alface, tomate, cebola, maionese e catchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',15.00,'arquivo/Burger1.jpg',1),(6,5,'Guns n\' Roses','Pão com gergelim, dois suculentos hambúrgueres de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',30.00,'arquivo/Burger1.jpg',0),(8,NULL,'Deep Purple','adas',18.00,'sadf',0);
 /*!40000 ALTER TABLE `tbl_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -308,10 +287,10 @@ DROP TABLE IF EXISTS `tbl_produto_categoria`;
 CREATE TABLE `tbl_produto_categoria` (
   `id_produto` int(11) NOT NULL,
   `id_categoria` int(11) NOT NULL,
-  KEY `fk_tbl_produto_categoria_tbl_categoria1_idx` (`id_categoria`),
   KEY `fk_produto_categoria_idx` (`id_produto`),
+  KEY `fk_produto_categoria2_idx` (`id_categoria`),
   CONSTRAINT `fk_produto_categoria` FOREIGN KEY (`id_produto`) REFERENCES `tbl_produto` (`id_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_produto_categoria_tbl_categoria1` FOREIGN KEY (`id_categoria`) REFERENCES `tbl_categoria` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_produto_categoria2` FOREIGN KEY (`id_categoria`) REFERENCES `tbl_categoria` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -458,28 +437,30 @@ INSERT INTO `tbl_sobreahamburgueria` VALUES (1,'Sobre 1','Honker Burguer começo
 UNLOCK TABLES;
 
 --
--- Table structure for table `tbl_submenu`
+-- Table structure for table `tbl_subcategoria`
 --
 
-DROP TABLE IF EXISTS `tbl_submenu`;
+DROP TABLE IF EXISTS `tbl_subcategoria`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_submenu` (
-  `id_submenu` int(11) NOT NULL,
-  `nome` varchar(20) NOT NULL,
-  `url` varchar(200) NOT NULL,
-  PRIMARY KEY (`id_submenu`),
-  UNIQUE KEY `tbl_nome_UNIQUE` (`nome`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `tbl_subcategoria` (
+  `id_subcategoria` int(11) NOT NULL AUTO_INCREMENT,
+  `id_categoria` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_subcategoria`),
+  KEY `fk_subcategoria_categoria_idx` (`id_categoria`),
+  CONSTRAINT `fk_subcategoria_categoria` FOREIGN KEY (`id_categoria`) REFERENCES `tbl_categoria` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_submenu`
+-- Dumping data for table `tbl_subcategoria`
 --
 
-LOCK TABLES `tbl_submenu` WRITE;
-/*!40000 ALTER TABLE `tbl_submenu` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_submenu` ENABLE KEYS */;
+LOCK TABLES `tbl_subcategoria` WRITE;
+/*!40000 ALTER TABLE `tbl_subcategoria` DISABLE KEYS */;
+INSERT INTO `tbl_subcategoria` VALUES (7,4,'Bebida láctea'),(8,4,'Bebida alcóolica'),(9,4,'Refrigerantes'),(10,1,'Carne bovina'),(11,1,'Carne suína'),(12,3,'Peixes de água doce'),(13,3,'Peixes de água salgada'),(14,1,'Com bacon');
+/*!40000 ALTER TABLE `tbl_subcategoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -501,7 +482,7 @@ CREATE TABLE `tbl_usuario` (
   UNIQUE KEY `login_UNIQUE` (`login`),
   KEY `id_nivel_usuario_idx` (`id_nivel_usuario`),
   CONSTRAINT `id_nivel_usuario` FOREIGN KEY (`id_nivel_usuario`) REFERENCES `tbl_nivel_usuario` (`id_nivel_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -510,7 +491,7 @@ CREATE TABLE `tbl_usuario` (
 
 LOCK TABLES `tbl_usuario` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
-INSERT INTO `tbl_usuario` VALUES (1,1,'Gabriel Testa','gabrielaugusto','123456','gabrielaugusto@email.com','(11)91234-5678'),(2,3,'Gabriel Lima','gabriellima','1234567','gabriel._.lima@hotmail.com','(11)98765-4321');
+INSERT INTO `tbl_usuario` VALUES (1,1,'Gabriel Testa','gabrielaugusto','123456','gabrielaugusto@email.com','(11)91234-5678'),(2,3,'Gabriel Lima','gabriellima','1234567','gabriel._.lima@hotmail.com','(11)98765-4321'),(3,1,'Daiane Linda','dai','123','1dsfsf','asdfas');
 /*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -677,4 +658,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-07 22:41:16
+-- Dump completed on 2017-05-22 16:55:37

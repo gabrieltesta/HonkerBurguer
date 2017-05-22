@@ -5,6 +5,7 @@
 	Validação HTML5 W3C - 0 erros encontrados.
 -->
 <?php 
+	require_once('CMS/conectarMySQL.php');
 	// Ao retornar de um login mal sucedido, o página possui login=false na URL
 	// método verifica a existência do parâmetro login e cria uma janela de alerta de login inválido.
 	if (isset($_GET['login']))
@@ -102,11 +103,22 @@
 					<div id="menuSecundario">
 						<ul class="listaMenuSecundario">
 						<?php
-							$i = 0;
-							while ($i<15)
+							$sql = "SELECT * FROM tbl_categoria;";
+							$select = mysql_query($sql);
+							while($rs=mysql_fetch_array($select))
 							{
-								echo('<li><a href="#">Hamburguer</a></li>');
-								$i += 1;
+								?><li><?php echo($rs['nome']); ?></li><?php
+								$sql = "SELECT * FROM tbl_subcategoria WHERE id_categoria = ".$rs['id_categoria'].";";
+								$selectSubcategoria = mysql_query($sql);
+								if(mysql_num_rows($selectSubcategoria) > 0)
+								{
+									?><ul style="list-style:none;"><?php
+									while($rssubcategoria=mysql_fetch_array($selectSubcategoria))
+									{
+										?><li><?php echo($rssubcategoria['nome']); ?></li><?php
+									}
+									?></ul><?php
+								}
 							}
 						?>
 						</ul>
