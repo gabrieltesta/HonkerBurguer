@@ -126,11 +126,18 @@
 					<!-- Área de produtos -->
 					<div id="areaDisplay">
 						<?php
-							$i = 0;
-							while ($i<6)
+							$sql = "SELECT * FROM tbl_produto;";
+							$select = mysql_query($sql);
+							while ($resultado=mysql_fetch_array($select))
 							{
-								echo('<div class="displayHamburguer"><img src="Imagens/burger.jpg" alt="Hamburguer"><h3>Hambúrguer</h3><p class="displayDescricao">O hambúrguer, é uma espécie de carne moída, temperada com cebola, salsa, mostarda etc., ligada com ovo, moldada em formato circular e frita.</p><p class="displayPreco">R$ 10,00</p></div>');
-								$i += 1;
+								?>
+								<div class="displayHamburguer">
+									<img src="CMS/<?php echo($resultado['imagem']); ?>" alt="<?php echo($resultado['nome']); ?>">
+									<h3><?php echo($resultado['nome']); ?></h3>
+									<p class="displayDescricao"><?php echo($resultado['descricao']); ?></p>
+									<p class="displayPreco">R$ <?php echo($resultado['preco']); ?></p>
+								</div>
+								<?php
 							}
 						?>
 					</div>
