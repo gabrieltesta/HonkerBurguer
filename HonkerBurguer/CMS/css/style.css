@@ -832,3 +832,25 @@ footer p
 	width: 100%;
 }
 /**/
+
+#tblNutricional
+{
+	margin: auto;
+}
+
+#tblNutricional input[type="text"]
+{
+	width: 30px;
+}
+
+#tblNutricional th
+{
+	width: 60%;
+	height: 10px;
+	
+}
+
+#tblNutricional td
+{
+	width: 20%;
+}

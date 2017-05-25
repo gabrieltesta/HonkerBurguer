@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `db_honkerburguer` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `db_honkerburguer`;
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_honkerburguer
 -- ------------------------------------------------------
--- Server version	5.7.10-log
+-- Server version	5.6.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -256,6 +256,7 @@ DROP TABLE IF EXISTS `tbl_produto`;
 CREATE TABLE `tbl_produto` (
   `id_produto` int(11) NOT NULL AUTO_INCREMENT,
   `id_informacaonutricional` int(11) DEFAULT NULL,
+  `id_subcategoria` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `descricao` text NOT NULL,
   `preco` float(5,2) NOT NULL,
@@ -263,6 +264,7 @@ CREATE TABLE `tbl_produto` (
   `status_lanchedomes` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_produto`),
   KEY `fk_tbl_produto_tbl_informacaonutricional1_idx` (`id_informacaonutricional`),
+  KEY `subcategoria_produto_idx` (`id_subcategoria`),
   CONSTRAINT `info_produto` FOREIGN KEY (`id_informacaonutricional`) REFERENCES `tbl_informacaonutricional` (`id_informacaonutricional`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -273,34 +275,8 @@ CREATE TABLE `tbl_produto` (
 
 LOCK TABLES `tbl_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_produto` DISABLE KEYS */;
-INSERT INTO `tbl_produto` VALUES (4,4,'AC/DC','Pão com gergelim, um suculento hambúrguer de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',20.00,'arquivo/Burger1.jpg',0),(5,6,'Beatles','Pão com gergelim, um saboroso hambúrguer de pura carne bovina, uma fatia de queijo derretido, duas fatias de picles, alface, tomate, cebola, maionese e catchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',15.00,'arquivo/Burger1.jpg',1),(6,5,'Guns n\' Roses','Pão com gergelim, dois suculentos hambúrgueres de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',30.00,'arquivo/Burger1.jpg',0),(8,NULL,'Deep Purple','adas',18.00,'sadf',0);
+INSERT INTO `tbl_produto` VALUES (4,4,14,'AC/DC','Pão com gergelim, um suculento hambúrguer de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',20.00,'arquivo/Burger1.jpg',0),(5,6,12,'Beatles','Pão com gergelim, um saboroso hambúrguer de pura carne bovina, uma fatia de queijo derretido, duas fatias de picles, alface, tomate, cebola, maionese e catchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',15.00,'arquivo/fbLogo.png',1),(6,5,10,'Guns n\' Roses','Pão com gergelim, dois suculentos hambúrgueres de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',30.00,'arquivo/baba.jpg',0),(8,6,11,'Deep Purple2','adas123123',15.33,'arquivo/baba.jpg',0);
 /*!40000 ALTER TABLE `tbl_produto` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tbl_produto_categoria`
---
-
-DROP TABLE IF EXISTS `tbl_produto_categoria`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_produto_categoria` (
-  `id_produto` int(11) NOT NULL,
-  `id_categoria` int(11) NOT NULL,
-  KEY `fk_produto_categoria_idx` (`id_produto`),
-  KEY `fk_produto_categoria2_idx` (`id_categoria`),
-  CONSTRAINT `fk_produto_categoria` FOREIGN KEY (`id_produto`) REFERENCES `tbl_produto` (`id_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_produto_categoria2` FOREIGN KEY (`id_categoria`) REFERENCES `tbl_categoria` (`id_categoria`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_produto_categoria`
---
-
-LOCK TABLES `tbl_produto_categoria` WRITE;
-/*!40000 ALTER TABLE `tbl_produto_categoria` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_produto_categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -658,4 +634,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-22 16:55:37
+-- Dump completed on 2017-05-25 16:57:53
