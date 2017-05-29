@@ -13,6 +13,22 @@
 	$preco = "";
 	$modo = "Salvar";
 	$modoInfo = "Salvar";
+	$nomeInfo = "";
+	$porcao = "";
+	$qtdValorEnergetico = "";
+	$vdValorEnergetico = "";
+	$qtdCarboidratos = "";
+	$vdCarboidratos = "";
+	$qtdProteinas = "";
+	$vdProteinas = "";
+	$qtdGordurasTotais = "";
+	$vdGordurasTotais = "";
+	$qtdGordurasSaturadas = "";
+	$vdGordurasSaturadas = "";
+	$qtdFibraAlimentar = "";
+	$vdFibraAlimentar = "";
+	$qtdSodio = "";
+	$vdSodio = "";
 	
 	if($_SESSION['site']==0)
 	{
@@ -32,6 +48,7 @@
 		{
 			//Altera o modo do submit para edição
 			$modo = 'Editar';
+			$modoInfo = 'Editar';
 			
 			//Realiza um SELECT no banco de dados e implementa os dados nos inputs
 			$sql = "SELECT * FROM tbl_produto WHERE id_produto=".$_GET['id_produto'].";";
@@ -42,6 +59,32 @@
 				$descricao = $resultado['descricao'];
 				$preco = $resultado['preco'];
 				$id_subcategoria = $resultado['id_subcategoria'];
+				$id_informacaonutricional = $resultado['id_informacaonutricional'];
+			}
+			
+			if($id_informacaonutricional != null && $id_informacaonutricional != "")
+			{
+				$sql = "SELECT * FROM tbl_informacaonutricional WHERE id_informacaonutricional=".$id_informacaonutricional.";";
+				$select = mysql_query($sql);
+				if($resultado=mysql_fetch_array($select))
+				{
+					$nomeInfo = $resultado['nome'];
+					$porcao = $resultado['porcao'];
+					$qtdValorEnergetico = $resultado['qtd_valorenergetico'];
+					$vdValorEnergetico = $resultado['vd_valorenergetico'];
+					$qtdCarboidratos = $resultado['qtd_carboidratos'];
+					$vdCarboidratos = $resultado['vd_carboidratos'];
+					$qtdProteinas = $resultado['qtd_proteinas'];
+					$vdProteinas = $resultado['vd_proteinas'];
+					$qtdGordurasTotais = $resultado['qtd_gordurastotais'];
+					$vdGordurasTotais = $resultado['vd_gordurastotais'];
+					$qtdGordurasSaturadas = $resultado['qtd_gordurassaturadas'];
+					$vdGordurasSaturadas = $resultado['vd_gordurassaturadas'];
+					$qtdFibraAlimentar = $resultado['qtd_fibraalimentar'];
+					$vdFibraAlimentar = $resultado['vd_fibraalimentar'];
+					$qtdSodio = $resultado['qtd_sodio'];
+					$vdSodio = $resultado['vd_sodio'];
+				}
 			}
 		}
 	}
@@ -72,10 +115,42 @@
 				$sql = 'UPDATE tbl_produto SET nome="'.$nome.'", descricao="'.$descricao.'", preco="'.$preco.'", id_informacaonutricional="'.$idinformacaonutricional.'", id_subcategoria="'.$idsubcategoria.'" WHERE id_produto='.$_POST["txtIdProduto"].';';
 				mysql_query($sql);
 				header('location:Produtos.php');
-				echo $sql;
 			}	
 		}
 	}
+	if (isset($_POST['btnSalvarInfo']))
+	{
+		$nomeInfo = $_POST['txtInfoNome'];
+		$porcao = $_POST['txtPorcao'];
+		$qtdValorEnergetico = $_POST['txtQtdValorEnergetico'];
+		$vdValorEnergetico = $_POST['txtVdValorEnergetico'];
+		$qtdCarboidratos = $_POST['txtQtdCarboidratos'];
+		$vdCarboidratos = $_POST['txtVdCarboidratos'];
+		$qtdProteinas = $_POST['txtQtdProteinas'];
+		$vdProteinas = $_POST['txtVdProteinas'];
+		$qtdGordurasTotais = $_POST['txtQtdGordurasTotais'];
+		$vdGordurasTotais = $_POST['txtVdGordurasTotais'];
+		$qtdGordurasSaturadas = $_POST['txtQtdGordurasSaturadas'];
+		$vdGordurasSaturadas = $_POST['txtVdGordurasSaturadas'];
+		$qtdFibraAlimentar = $_POST['txtQtdFibraAlimentar'];
+		$vdFibraAlimentar = $_POST['txtVdFibraAlimentar'];
+		$qtdSodio = $_POST['txtQtdSodio'];
+		$vdSodio = $_POST['txtVdSodio'];
+		
+		if($_POST['btnSalvarInfo'] == 'Editar')
+		{
+			$sql = "UPDATE tbl_informacaonutricional SET nome='".$nomeInfo."', porcao='".$porcao."', qtd_valorenergetico='".$qtdValorEnergetico."', vd_valorenergetico='".$vdValorEnergetico."', qtd_carboidratos='".$qtdCarboidratos."', vd_carboidratos='".$vdCarboidratos."', qtd_proteinas='".$qtdProteinas."', vd_proteinas='".$vdProteinas."', qtd_gordurastotais='".$qtdGordurasTotais."', vd_gordurastotais='".$vdGordurasTotais."', qtd_gordurassaturadas='".$qtdGordurasSaturadas."', vd_gordurassaturadas='".$vdGordurasSaturadas."', qtd_fibraalimentar='".$qtdFibraAlimentar."', vd_fibraalimentar='".$vdFibraAlimentar."', qtd_sodio='".$qtdSodio."', vd_sodio='".$vdSodio."' WHERE id_informacaonutricional=".$_POST['txtIdInfo'].";";
+		
+		}
+		else if($_POST['btnSalvarInfo'] == 'Salvar')
+		{
+			$sql = "INSERT INTO tbl_informacaonutricional(nome, porcao, qtd_valorenergetico, vd_valorenergetico, qtd_carboidratos, vd_carboidratos, qtd_proteinas, vd_proteinas, qtd_gordurastotais, vd_gordurastotais, qtd_gordurassaturadas, vd_gordurassaturadas, qtd_fibraalimentar, vd_fibraalimentar, qtd_sodio, vd_sodio) VALUES('".$nomeInfo."', '".$porcao."', '".$qtdValorEnergetico."', '".$vdValorEnergetico."', '".$qtdCarboidratos."', '".$vdCarboidratos."', '".$qtdProteinas."', '".$vdProteinas."', '".$qtdGordurasTotais."', '".$vdGordurasTotais."', '".$qtdGordurasSaturadas."', '".$vdGordurasSaturadas."', '".$qtdFibraAlimentar."', '".$vdFibraAlimentar."', '".$qtdSodio."', '".$vdSodio."');";
+		}
+		mysql_query($sql);
+		header('location:Produtos.php');
+		
+	}
+	
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -97,13 +172,15 @@
 							<tr>
 								<th>Nome</th>
 								<th>Descrição</th>
+								<th>Categoria</th>
+								<th>Subcategoria</th>
 								<th>Preço</th>
 								<th>Informação Nutricional</th>
 								<th>Opções</th>
 							</tr>
 							<?php
 							// SELECT no banco de dados para visualizar os lanches registrados
-								$sql = "SELECT id_produto, nome, descricao, preco, id_informacaonutricional, id_subcategoria, CASE WHEN id_informacaonutricional is null THEN 'Não há registro' ELSE 'Registrado' END as informacaonutricional FROM tbl_produto;";
+								$sql = "SELECT * from vw_produto;";
 								$select = mysql_query($sql);
 							
 								while ($resultado=mysql_fetch_array($select))
@@ -112,6 +189,8 @@
 										<tr>
 											<td class="tblBandaNome"><?php echo($resultado['nome']); ?></td>
 											<td class="tblBandaTexto"><?php echo($resultado['descricao']); ?></td>
+											<td><?php echo($resultado['categoria']); ?></td>
+											<td><?php echo($resultado['subcategoria']); ?></td>
 											<td class="tblBandaNome alignText"><?php echo($resultado['preco']); ?></td>
 											<td class="tblBandaStatus alignText"><?php echo($resultado['informacaonutricional']) ?></td>
 											<td class="tblBandaOpcoes alignText">
@@ -240,57 +319,57 @@
 						</form>
 					</div>
 					<div id="tblNivelUsuarioBoxRegistro">
-						<form method="post" action="CategoriasProdutos.php" name="frmAdmNivelUsuario">
+						<form method="post" action="Produtos.php" name="frmAdmNivelUsuario">
 						<table class="tblNivelUsuario tblNivelUsuarioEditar">
 							<tr id="tblNivelUsuarioTitulo">
 								<th colspan="2"><span id="tituloFormFaleConosco">Registro de Informação Nutricional</span></th>
 							</tr>
 							<tr>
 								<th>Nome</th>
-								<td><input type="text" name="txtCategoriaNome" value="<?php echo($nome); ?>" required><input type="hidden" name="txtIdCategoria" value="<?php echo($_GET['idcategoria']); ?>"></td>
+								<td><input type="text" name="txtInfoNome" value="<?php echo($nomeInfo); ?>" required><input type="hidden" name="txtIdInfo" value="<?php echo($_GET['id_informacaonutricional']); ?>"></td>
 							</tr>
 							<tr>
 								<th></th>
 								<td id="tblNutricionalBox">
 									<table id="tblNutricional">
 										<tr>
-											<td colspan="2">porção: <input type="text" name="txtPorcao">g (1 unidade)</td>
+											<td colspan="2">porção: <input type="text" name="txtPorcao" value="<?php echo($porcao); ?>">g (1 unidade)</td>
 											<td>%VD*</td>
 										</tr>
 										<tr>
 											<th>Valor energético</th>
-											<td><input type="text" name="txtValorEnergetico">kcal</td>
-											<td><input type="text" name="txtValorEnergetico">%</td>
+											<td id="tdKcal"><input type="text" name="txtQtdValorEnergetico" value="<?php echo($qtdValorEnergetico); ?>">kcal</td>
+											<td><input type="text" name="txtVdValorEnergetico" value="<?php echo($vdValorEnergetico); ?>">%</td>
 										</tr>
 										<tr>
 											<th>Carboidratos</th>
-											<td><input type="text" name="txtValorEnergetico">g</td>
-											<td><input type="text" name="txtValorEnergetico">%</td>
+											<td><input type="text" name="txtQtdCarboidratos" value="<?php echo($qtdCarboidratos); ?>">g</td>
+											<td><input type="text" name="txtVdCarboidratos" value="<?php echo($vdCarboidratos); ?>">%</td>
 										</tr>
 										<tr>
 											<th>Proteínas</th>
-											<td><input type="text" name="txtValorEnergetico">g</td>
-											<td><input type="text" name="txtValorEnergetico">%</td>
+											<td><input type="text" name="txtQtdProteinas" value="<?php echo($qtdProteinas); ?>">g</td>
+											<td><input type="text" name="txtVdProteinas" value="<?php echo($vdProteinas); ?>">%</td>
 										</tr>
 										<tr>
 											<th>Gorduras totais</th>
-											<td><input type="text" name="txtValorEnergetico">g</td>
-											<td><input type="text" name="txtValorEnergetico">%</td>
+											<td><input type="text" name="txtQtdGordurasTotais" value="<?php echo($qtdGordurasTotais); ?>">g</td>
+											<td><input type="text" name="txtVdGordurasTotais" value="<?php echo($vdGordurasTotais); ?>">%</td>
 										</tr>
 										<tr>
 											<th>Gorduras saturadas</th>
-											<td><input type="text" name="txtValorEnergetico">g</td>
-											<td><input type="text" name="txtValorEnergetico">%</td>
+											<td><input type="text" name="txtQtdGordurasSaturadas" value="<?php echo($qtdGordurasSaturadas); ?>">g</td>
+											<td><input type="text" name="txtVdGordurasSaturadas" value="<?php echo($vdGordurasSaturadas); ?>">%</td>
 										</tr>
 										<tr>
 											<th>Fibra alimentar</th>
-											<td><input type="text" name="txtValorEnergetico">g</td>
-											<td><input type="text" name="txtValorEnergetico">%</td>
+											<td><input type="text" name="txtQtdFibraAlimentar" value="<?php echo($qtdFibraAlimentar); ?>">g</td>
+											<td><input type="text" name="txtVdFibraAlimentar" value="<?php echo($vdFibraAlimentar); ?>">%</td>
 										</tr>
 										<tr>
 											<th>Sódio</th>
-											<td><input type="text" name="txtValorEnergetico">mg</td>
-											<td><input type="text" name="txtValorEnergetico">%</td>
+											<td><input type="text" name="txtQtdSodio" value="<?php echo($qtdSodio); ?>">mg</td>
+											<td><input type="text" name="txtVdSodio" value="<?php echo($vdSodio); ?>">%</td>
 										</tr>
 								</table>
 							</td>
@@ -301,7 +380,7 @@
 								?>
 								<tr id="tblNivelUsuarioOpcoes">
 									<th>Opções</th>
-									<td><input type="submit" name="btnSalvar" value="<?php echo($modo); ?>"></td>
+									<td><input type="submit" name="btnSalvarInfo" value="<?php echo($modoInfo); ?>"></td>
 								</tr>
 								<?php
 							}
@@ -310,7 +389,7 @@
 								?>
 								<tr id="tblNivelUsuarioOpcoes">
 									<th>Opções</th>
-									<td><input type="submit" name="btnSalvar" value="<?php echo($modo); ?>"><form name="frmEditar" action="CategoriasProdutos.php"><input type="submit" value="Nova Categoria"></form></td>
+									<td><input type="submit" name="btnSalvarInfo" value="<?php echo($modoInfo); ?>"><form name="frmEditar" action="Produtos.php"><input type="submit" value="Nova Informação Nutricional"></form></td>
 								</tr>
 								<?php
 							}

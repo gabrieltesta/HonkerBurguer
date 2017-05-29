@@ -107,7 +107,7 @@
 							$select = mysql_query($sql);
 							while($rs=mysql_fetch_array($select))
 							{
-								?><li><?php echo($rs['nome']); ?></li><?php
+								?><a href="Index.php?id_categoria=<?php echo($rs['id_categoria']); ?>"><li><?php echo($rs['nome']); ?></li></a><?php
 								$sql = "SELECT * FROM tbl_subcategoria WHERE id_categoria = ".$rs['id_categoria'].";";
 								$selectSubcategoria = mysql_query($sql);
 								if(mysql_num_rows($selectSubcategoria) > 0)
@@ -115,7 +115,7 @@
 									?><ul style="list-style:none;"><?php
 									while($rssubcategoria=mysql_fetch_array($selectSubcategoria))
 									{
-										?><li><?php echo($rssubcategoria['nome']); ?></li><?php
+										?><a href="Index.php?id_subcategoria=<?php echo($rssubcategoria['id_subcategoria']); ?>"><li><?php echo($rssubcategoria['nome']); ?></li><?php
 									}
 									?></ul><?php
 								}
@@ -125,23 +125,52 @@
 					</div>
 					<!-- Área de produtos -->
 					<div id="areaDisplay">
-						<?php
-							$sql = "SELECT * FROM tbl_produto;";
+						<div id="buscaProdutos" style="position:relative;">
+							<form method="get" action="Index.php">
+								<input type="text" name="search" placeholder="Pesquise um produto aqui..." id="inputBusca">
+								<button type="submit" id="btnBusca">
+									<img src="Imagens/busca.png" alt="Busca">
+								</button>
+							</form>
+						</div>
+						<?php		
+							$sql = "SELECT * FROM tbl_produto ORDER BY RAND();";
+							if (isset($_GET['id_categoria']))
+							{
+								$sql = "SELECT p.id_produto, p.id_informacaonutricional, p.nome, p.descricao, p.preco, p.imagem, p.status_lanchedomes, c.id_categoria, c.nome as categoria, p.id_subcategoria, s.nome as subcategoria FROM tbl_produto as p INNER JOIN tbl_subcategoria as s ON p.id_subcategoria=s.id_subcategoria INNER JOIN tbl_categoria as c ON c.id_categoria=s.id_categoria WHERE c.id_categoria=".$_GET['id_categoria'].";";
+							}
+							if (isset($_GET['id_subcategoria']))
+							{
+								$sql = "SELECT p.id_produto, p.id_informacaonutricional, p.nome, p.descricao, p.preco, p.imagem, p.status_lanchedomes, c.id_categoria, c.nome as categoria, p.id_subcategoria, s.nome as subcategoria FROM tbl_produto as p INNER JOIN tbl_subcategoria as s ON p.id_subcategoria=s.id_subcategoria INNER JOIN tbl_categoria as c ON c.id_categoria=s.id_categoria WHERE s.id_subcategoria=".$_GET['id_subcategoria'].";";
+							}
+							if (isset($_GET['search']))
+							{
+								$sql = "SELECT * FROM tbl_produto WHERE nome LIKE '%".$_GET['search']."%' ORDER BY RAND();";
+							}
+							
 							$select = mysql_query($sql);
+							if(mysql_num_rows($select)==0)
+							{
+								echo("Não há nenhum produto com esses parâmetros de busca.");
+							}
+							
 							while ($resultado=mysql_fetch_array($select))
 							{
 								?>
+								<a href="Index.php?id_produto=<?php echo($resultado['id_produto']); ?>">
 								<div class="displayHamburguer">
 									<img src="CMS/<?php echo($resultado['imagem']); ?>" alt="<?php echo($resultado['nome']); ?>">
 									<h3><?php echo($resultado['nome']); ?></h3>
 									<p class="displayDescricao"><?php echo($resultado['descricao']); ?></p>
 									<p class="displayPreco">R$ <?php echo($resultado['preco']); ?></p>
 								</div>
+								</a>
 								<?php
 							}
 						?>
 					</div>
 				</div>
+
 			</section>
 			<?php 
 				//Inserção de conteúdo utilizado em várias páginas (rodapé)

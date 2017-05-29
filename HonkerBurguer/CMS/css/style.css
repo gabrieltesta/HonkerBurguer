@@ -841,16 +841,22 @@ footer p
 #tblNutricional input[type="text"]
 {
 	width: 30px;
+	text-align: right;
 }
 
 #tblNutricional th
 {
-	width: 60%;
+	width: 50%;
 	height: 10px;
 	
 }
 
 #tblNutricional td
 {
-	width: 20%;
+	width: 25%;
+}
+
+#tdKcal
+{
+	white-space: nowrap;
 }
