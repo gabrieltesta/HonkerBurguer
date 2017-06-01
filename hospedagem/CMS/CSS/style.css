@@ -1,0 +1,862 @@
+/*
+	Arquivo CSS - Honker Burguer
+	Autor: Gabriel Testa - INF3T
+	Período: fev/2017 - jun/2017
+	Validação CSS3 W3C - 0 erros encontrados.
+*/
+
+/* Geral */  
+body
+{
+	font-family: Calibri;
+}
+a
+{
+	text-decoration: none;
+	color: inherit;
+}
+
+textarea
+{
+	resize: none;
+}
+
+#principal
+{
+	width: 1600px;
+	height: 1100px;
+	border: solid 1px #000;
+	border-radius: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+
+}
+
+section
+{
+	width:100%;
+	height:650px;
+}
+
+/**/
+
+/* Header */
+header
+{
+	width:100%;
+	height:200px;
+	border-bottom: solid 1px #000;
+	background-color: #f2eee7;
+	
+}
+
+#tituloHeader
+{
+	clear:both;
+	width: 500px;
+	height: 50px;
+	display: inline-block;
+	margin-left: 100px;
+	margin-top: 5%;
+	
+}
+
+#tituloHeader h2
+{
+	display: inline;
+	font-size: 26pt;
+	vertical-align: middle;
+}
+
+#tituloHeader h3
+{
+	display: inline;
+	vertical-align: middle;
+	font-size: 18pt;
+}
+
+#imgHeader
+{
+	width: 300px;
+	height: 100px;
+	float: right;
+	margin-top: 3%;
+	margin-right: 100px;
+	background-image: url(../imagens/logo.png);
+}
+/**/
+
+/* nav */
+nav
+{
+	width:100%;
+	height:200px;
+	border-bottom: solid 1px #000;
+}
+
+.itemMenu
+{
+	width: 200px;
+	height: 200px;
+	margin-left: 50px;
+	display: inline-block;
+}
+
+
+.itemMenuImagem
+{
+	width: 180px;
+	height: 180px;
+	margin-left: 10px;
+}
+
+.itemMenuImagem img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.itemMenuTitulo
+{
+	text-align:center;
+	margin-top: -200px;
+}
+
+.paginaSelecionada
+{
+	border: solid 1px orange;
+	height: 180px;
+	color: orange;
+}
+
+nav span
+{
+	font-weight: bold;
+	font-size: 16pt;
+}
+#welcome
+{
+	clear:both;
+	float: right;
+	margin-right: 15px;
+}
+
+#logout
+{
+	font-size: 16pt;
+	margin-top: 135px;
+	margin-right: 15px;
+	clear:both;
+	float: right;
+}
+
+#dadosLogin
+{
+	float: right;
+	width: 500px;
+	height: 200px;
+}
+/**/
+
+/* Footer */
+footer
+{
+	width: 100%;
+	height: 50px;
+	border-top: solid 1px #000;
+	background-color: #f2eee7;
+	
+}
+
+footer p
+{
+	text-align: center;
+}
+/**/
+
+/* Adm. Fale Conosco */
+#principalFaleConosco
+{
+	width: 1600px;
+	height: 1600px;
+	border: solid 1px #000;
+	border-radius: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	
+}
+
+#conteudoFaleConosco
+{
+	height:1150px;
+	width: 100%;
+}
+
+#tblFaleConoscoBox
+{
+	height: 300px;
+	overflow-y: auto;
+	display: inline-block;
+	width: 1570px;
+	margin-top: 75px;
+	margin-left: 15px;
+	
+}
+
+#tblFaleConosco
+{
+	width: 1550px;
+
+	border: dotted 1px #000;
+	table-layout: fixed;
+
+}
+
+#tblFaleConosco th
+{
+	background-color: #f2eee7;
+	height: 30px;
+	border-bottom: solid 1px #ccc;
+}
+
+#tblFaleConosco td
+{
+	border-right: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
+	white-space: nowrap;
+	overflow: hidden;
+
+}
+
+#tblFaleConosco tr
+{
+	height: 5px;
+}
+
+.leftBorder
+{
+	border-left: solid 1px #ccc;
+}
+
+.colNome
+{
+	width: 10%;
+	max-width: 10%;
+}
+
+.colSexo
+{
+	width: 2%;
+	max-width: 2%;
+}
+
+.colTelefone
+{
+	width: 7%;
+	max-width: 7%;
+}
+
+.colLink
+{
+	width: 10%;
+	max-width: 10%;
+}
+
+.colProfissao
+{
+	width: 7%;
+	max-width: 7%;
+}
+
+.colOpcao
+{
+	width: 4%;
+	max-width: 4%;
+}
+
+.colFeedback
+{
+	width: 23%;
+	max-width: 23%;
+}
+
+.alignText
+{
+	vertical-align: middle;
+	text-align: center;
+}
+
+.cellOverflow
+{
+	white-space: normal;
+	word-break: break-all;
+	max-width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	max-height: 20px;
+}
+
+#formFaleConoscoBox
+{
+	width: 700px;
+	height: 675px;
+	border: dotted 1px #000;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#tituloFormFaleConosco
+{
+	width: 100%;
+	height: 50px;
+	background-color: #f2eee7;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 26pt;
+}
+
+#tblFormFaleConosco
+{
+	width: 100%;
+	height: 625px;
+}
+
+#tblFormFaleConosco th
+{
+	background-color:#f2eee7;
+	width: 30%;
+}
+
+#tblFormFaleConosco input[type=text]
+{
+	width: 450px;
+	margin-left: 4%;
+}
+
+#tblFormFaleConosco input[type=password]
+{
+	width: 450px;
+	margin-left: 4%;
+}
+
+
+#tblFaleConoscoRadio input
+{
+	margin-left: 5%;
+}
+
+#faleConoscoTextArea
+{
+	width: 450px;
+	height: 100px;
+	resize: none;
+	margin-left: 4%;
+}
+
+#tblOpcoes
+{
+	height: 50px;
+}
+
+#tblOpcoes input
+{
+	float: right;
+	margin-right: 2%;
+}
+
+#tblFormFaleConosco select
+{
+	margin-left: 4%;
+	width: 450px;
+}
+/**/
+
+/* Adm.Usuários */
+#saveRegistro
+{
+	float: right;
+}
+
+/**/
+
+/* Adm.Conteudo */
+#sectionConteudo
+{
+	width: 100%;
+	height: 650px;
+}
+
+#tblConteudo
+{
+	width: 350px;
+	height: 425px;
+	margin-top: 100px;
+	margin-left: 5%;
+	float:left;
+}
+
+.conteudoTitulo:hover
+{
+	border: solid 1px orange;	
+
+}
+
+#tblConteudoRight
+{
+	width: 350px;
+	height: 425px;
+	margin-top: 100px;
+	margin-left: 45%;
+	float: left;
+}
+
+#tblConteudoRight td
+{
+	background-color: #f2eee7;
+}
+
+#tblConteudo td
+{
+	background-color: #f2eee7;
+}
+
+#conteudo
+{
+	display: inline-block;
+	width: 100%;
+	height: 650px;
+}
+
+.conteudoImage img
+{
+	width: 100px;
+	height: 100px;
+}
+
+.conteudoImage
+{
+	width: 100px;
+	height: 100px;
+}
+
+.conteudoTitulo
+{
+	vertical-align: middle;
+	font-size: 14pt;
+	white-space: nowrap;
+	
+}
+
+.conteudoTitulo span
+{
+	margin-left: 5%;
+}
+/**/
+
+/* Index */
+
+#sectionIndex
+{
+	display: inline-block;
+}
+
+#indexHeader
+{
+	background-color: #f2eee7;
+	width: 80%;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+}
+
+#indexHeader img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.opcaoIndex
+{
+	float:left;
+	width: 200px;
+	height: 275px;
+	background-color: #9bb6ed;
+	margin-top: 50px;
+	margin-left: 10%;
+}
+
+.opcaoIndex h3
+{
+	text-align: center;
+	margin-top: -0.5%;
+	white-space: nowrap;
+}
+
+.opcaoIndex img
+{
+	width: 175px;
+	height: 175px;
+	margin-left: 7.5%;
+	margin-top: -5%;
+}
+
+.opcaoIndex div
+{
+	width: 175px;
+	height: 15%;
+	border: solid 1px #fff;
+	border-radius: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	vertical-align: middle;
+	background-color: orange;
+	color: #fff;
+	
+}
+
+.opcaoIndex div span
+{
+	font-size: 18pt;
+	line-height: 30pt;
+
+}
+
+.opcaoIndex div:hover
+{
+	background-color:#fff;
+	color: orange;
+	border-color: orange;
+}
+/**/
+
+/* Menu Usuário */
+
+#sectionMenuUsuario
+{
+	display: inline-block;
+	text-align: center;
+}
+
+#sectionMenuUsuario h2
+{
+	font-size: 32pt;
+}
+
+
+.menuUsuarioOption
+{
+	margin-left: 25%;
+
+}
+/**/
+
+/* Adm Nivel Usuario */
+.tblNivelUsuario
+{
+	width: 600px;
+		border: dotted 1px #000;
+}
+
+#tblNivelUsuarioScroll
+{
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 617px;
+	height: 250px;
+	margin-left: 5%;
+	margin-top: 5%;
+	float:left;
+}
+
+#tblNivelUsuarioBoxRegistro
+{
+	width: 600px;
+	height: 400px;
+	margin-left: 5%;
+	margin-top: 5%;
+	float:left;
+
+}
+
+#tblNivelUsuarioBox
+{
+	height: 300px;
+	display: inline-block;
+	width: 100%;
+
+}
+
+.tblNivelUsuario th
+{
+	background-color: #f2eee7;
+	height: 50px;
+	max-width: 75px;
+}
+
+.tblNivelUsuario td
+{
+	border-bottom: solid 1px #f2eee7;
+	border-right: solid 1px #f2eee7;
+}
+
+.tblNivelUsuario input[type=radio]
+{
+	margin-left: 5%;
+}
+
+.tblNivelUsuario textarea
+{
+	margin-left: 5%;
+	resize: none;
+	width: 89%;
+}
+
+.tblNivelUsuario input[type=file]
+{
+	margin-left: 5%;
+}
+
+.tblNivelUsuario select
+{
+	margin-left: 5%;
+	width: 91%;
+}
+
+.thInformacao
+{
+	width: 42.5%;
+}
+
+#thNomeNivel
+{
+	width: 85%;
+}
+
+.thCategorias
+{
+	width: 42.5%;
+}
+
+.tblNivelUsuario input[type=text]
+{
+	width: 90%;
+	margin-left: 5%;
+}
+
+#tblNivelUsuarioOpcoes th
+{
+	height: 10px;
+}
+
+.tblNivelUsuario input[type=submit]
+{
+	float: right;
+	margin-right: 4%;
+}
+
+#tblNivelUsuarioTitulo
+{
+	height: 40px;
+}
+
+.tblNivelUsuarioEditar
+{
+	margin-left: 15%;
+}
+/**/
+
+/* Banda em Destaque */
+#tblBanda
+{
+	width: 1400px;
+	border: dotted 1px #000;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#tblBanda th
+{
+	background-color: #f2eee7;
+}
+
+#tblBanda td
+{
+	white-space:nowrap;
+	
+}
+
+.tblBandaNome
+{
+	max-width: 400px;
+}
+
+.tblBandaTitulo
+{
+	max-width: 400px;
+}
+
+.tblBandaTexto
+{
+	max-width: 650px;
+}
+
+#tblBanda td
+{
+	overflow: hidden;
+}
+
+.tblBandaStatus
+{
+	max-width: 50px;
+}
+
+.tblBandaOpcoes
+{
+	max-width: 100px;
+}
+
+#tblBandaBox
+{
+	width: 1417px;
+	height: 200px;
+	overflow-y: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+}
+
+.tblBandaRegistro textarea
+{
+	margin-left: 5%;
+	resize: none;
+	width: 89%;
+}
+
+
+.tblBandaRegistro
+{
+	width: 600px;
+	border: dotted 1px #000;
+}
+
+.tblBandaRegistro select
+{
+	width: 90%;
+	margin-left: 5%;
+}
+
+
+#tblBandaBoxRegistro
+{
+	width: 600px;
+	height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+
+}
+
+#tblBandaRegistroBox
+{
+	height: 600px;
+	width: 100%;
+
+}
+
+.tblBandaRegistro th
+{
+	background-color: #f2eee7;
+	height: 50px;
+}
+
+.tblBandaRegistro td
+{
+	border-bottom: solid 1px #f2eee7;
+	border-right: solid 1px #f2eee7;
+}
+
+
+.tblBandaRegistro input[type=text]
+{
+	width: 90%;
+	margin-left: 5%;
+}
+
+#tblBandaRegistroOpcoes th
+{
+	height: 10px;
+}
+
+.tblBandaRegistro input[type=submit]
+{
+	float: right;
+	margin-right: 4%;
+}
+
+#tblBandaRegistroTitulo
+{
+	height: 40px;
+}
+
+.tblBandaRegistro input[type=radio]
+{
+	margin-left: 5%;
+}
+
+.tblBandaRegistro input[type=file]
+{
+	margin-left: 5%;
+}
+
+#principalBanda
+{
+	width: 1600px;
+	height: 1200px;
+	border: solid 1px #000;
+	border-radius: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	
+}
+
+#conteudoBanda
+{
+	height:750px;
+	width: 100%;
+}
+/**/
+
+#tblNutricional
+{
+	margin: auto;
+}
+
+#tblNutricional input[type="text"]
+{
+	width: 30px;
+	text-align: right;
+}
+
+#tblNutricional th
+{
+	width: 50%;
+	height: 10px;
+	
+}
+
+#tblNutricional td
+{
+	width: 25%;
+}
+
+#tdKcal
+{
+	white-space: nowrap;
+}
