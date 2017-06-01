@@ -117,6 +117,27 @@
 				header('location:Produtos.php');
 			}	
 		}
+		if($_POST['btnSalvar'] == 'Salvar')
+		{
+			
+			$statusImagem = false;
+			require('uploadImagem.php');
+			if ($statusImagem)
+			{
+				// Insere no banco de dados um registro com imagem
+				$sql = 'INSERT INTO tbl_produto(nome, descricao, preco, id_informacaonutricional, id_subcategoria, imagem) VALUES("'.$nome.'", "'.$descricao.'", "'.$preco.'", "'.$idinformacaonutricional.'", "'.$idsubcategoria.'", "'.$uploadfile.'")';
+				mysql_query($sql);
+				header('location:Produtos.php');
+			}
+			else
+			{
+				?>
+					<script>
+						alert('Ocorreu um erro com o envio da imagem');
+					</script>
+				<?php
+			}	
+		}
 	}
 	if (isset($_POST['btnSalvarInfo']))
 	{
