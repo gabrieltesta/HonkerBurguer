@@ -87,6 +87,12 @@
 				}
 			}
 		}
+		else if ($_GET['modo'] == 'excluir')
+		{
+			$sql = "DELETE FROM tbl_produto WHERE id_produto=".$_GET['id_produto'].";";
+			mysql_query($sql);
+			header('location:Produtos.php');
+		}
 	}
 	
 	//Verifica se o botão submit foi utilizado

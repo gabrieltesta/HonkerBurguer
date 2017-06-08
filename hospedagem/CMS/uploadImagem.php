@@ -16,7 +16,7 @@
 		{
 			$statusImagem = true;
 		}
-		else
+		else	
 		{
 			//Caso o arquivo não foi transferido, exibe uma mensagem de erro
 			?>
