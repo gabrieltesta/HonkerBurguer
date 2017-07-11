@@ -390,6 +390,24 @@ footer p
 	height: 650px;
 }
 
+#sectionConteudoEstatistica
+{
+	width: 100%;
+	height: 1100px;
+}
+
+#principalEstatistica
+{
+	width: 1600px;
+	height: 1550px;
+	border: solid 1px #000;
+	border-radius: 60px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	
+}
+
 #tblConteudo
 {
 	width: 350px;

@@ -25,10 +25,6 @@
 				<div id="conteudo">
 					<table id="tblConteudo">
 						<tr>
-							<td class="conteudoImage"><img src="imagens/AdmConteudo/home.png" alt="Home" <?php if($allowProdutos == 0){ echo('style="filter: grayscale(100%)"'); } ?>></td>
-							<td class="conteudoTitulo"><span>Home</span></td>
-						</tr>
-						<tr>
 							<td class="conteudoImage"><img src="imagens/AdmConteudo/bandaemdestaque.png" alt="Banda em Destaque" <?php if($allowSite == 0){ echo('style="filter: grayscale(100%)"'); } ?>></td>
 							<td class="conteudoTitulo"><span><a href="BandaemDestaque.php">Banda em Destaque</a></span></td>
 						</tr>
@@ -52,12 +48,8 @@
 							<td class="conteudoTitulo"><span><a href="LanchedoMes.php">Lanche do Mês</a></span></td>
 						</tr>
 						<tr>
-							<td class="conteudoImage"><img src="imagens/AdmConteudo/redessociais.png" alt="Redes Sociais" <?php if($allowSite == 0){ echo('style="filter: grayscale(100%)"'); } ?>></td>
-							<td class="conteudoTitulo"><span>Redes Sociais</span></td>
-						</tr>
-						<tr>
-							<td class="conteudoImage"><img src="imagens/AdmConteudo/rodape.png" alt="Rodapé" <?php if($allowSite == 0){ echo('style="filter: grayscale(100%)"'); } ?>></td>
-							<td class="conteudoTitulo"><span>Rodapé</span></td>
+							<td class="conteudoImage"><img src="imagens/AdmConteudo/controle.png" alt="Controle Estatístico de Acesso" <?php if($allowProdutos == 0){ echo('style="filter: grayscale(100%)"'); } ?>></td>
+							<td class="conteudoTitulo"><span><a href="ControleEstatisticoAcesso.php">Controle Estatístico de Acesso</a></span></td>
 						</tr>
 					</table>
 				</div>	

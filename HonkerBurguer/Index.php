@@ -20,6 +20,12 @@
 			<?php
 		}
 	}	
+	
+	if (isset($_GET['id_produto']))
+	{
+	    	$sql = "UPDATE tbl_produto SET qtd_acessos=qtd_acessos+1 WHERE id_produto=".$_GET['id_produto'].";";
+	    	mysql_query($sql);
+	}
 ?>
 <!-- Home -->
 <!DOCTYPE html>
@@ -115,7 +121,7 @@
 									?><ul style="list-style:none;"><?php
 									while($rssubcategoria=mysql_fetch_array($selectSubcategoria))
 									{
-										?><a href="Index.php?id_subcategoria=<?php echo($rssubcategoria['id_subcategoria']); ?>"><li><?php echo($rssubcategoria['nome']); ?></li><?php
+										?><a href="Index.php?id_subcategoria=<?php echo($rssubcategoria['id_subcategoria']); ?>"><li><?php echo($rssubcategoria['nome']); ?></li></a><?php
 									}
 									?></ul><?php
 								}
