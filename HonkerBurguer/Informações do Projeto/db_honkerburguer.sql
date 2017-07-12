@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `db_honkerburguer` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `db_honkerburguer`;
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_honkerburguer
 -- ------------------------------------------------------
--- Server version	5.6.10-log
+-- Server version	5.7.18-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -262,11 +260,12 @@ CREATE TABLE `tbl_produto` (
   `preco` float(5,2) NOT NULL,
   `imagem` varchar(200) NOT NULL,
   `status_lanchedomes` tinyint(1) NOT NULL DEFAULT '0',
+  `qtd_acessos` varchar(45) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_produto`),
   KEY `fk_tbl_produto_tbl_informacaonutricional1_idx` (`id_informacaonutricional`),
   KEY `subcategoria_produto_idx` (`id_subcategoria`),
   CONSTRAINT `info_produto` FOREIGN KEY (`id_informacaonutricional`) REFERENCES `tbl_informacaonutricional` (`id_informacaonutricional`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -275,7 +274,7 @@ CREATE TABLE `tbl_produto` (
 
 LOCK TABLES `tbl_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_produto` DISABLE KEYS */;
-INSERT INTO `tbl_produto` VALUES (4,4,14,'AC/DC','Pão com gergelim, um suculento hambúrguer de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',20.00,'arquivo/Burger1.jpg',0),(5,6,12,'Beatles','Pão com gergelim, um saboroso hambúrguer de pura carne bovina, uma fatia de queijo derretido, duas fatias de picles, alface, tomate, cebola, maionese e catchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',15.00,'arquivo/fbLogo.png',1),(6,5,10,'Guns n\' Roses','Pão com gergelim, dois suculentos hambúrgueres de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',30.00,'arquivo/baba.jpg',0),(8,6,11,'Deep Purple2','adas123123',15.33,'arquivo/baba.jpg',0);
+INSERT INTO `tbl_produto` VALUES (4,4,14,'AC/DC','Pão com gergelim, um suculento hambúrguer de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',20.00,'arquivo/Burger1.jpg',0,'6'),(5,6,12,'Beatles','Pão com gergelim, um saboroso hambúrguer de pura carne bovina, uma fatia de queijo derretido, duas fatias de picles, alface, tomate, cebola, maionese e catchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',15.00,'arquivo/fbLogo.png',1,'6'),(6,5,10,'Guns n\' Roses','Pão com gergelim, dois suculentos hambúrgueres de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.',30.00,'arquivo/baba.jpg',0,'8'),(8,6,11,'Deep Purple2','adas123123',15.33,'arquivo/baba.jpg',0,'3'),(9,4,13,'sadf','saaf',2.00,'arquivo/vlcsnap-2017-06-06-19h08m20s879.png',0,'4'),(10,4,12,'sdfasf','saf',3.00,'arquivo/Layer 1.png',0,'2'),(11,4,10,'dsfsadf','sadf',5.00,'arquivo/vlcsnap-2017-06-04-20h18m38s493.png',0,'3'),(12,4,10,'safdasdfa','sdfsad',23.00,'arquivo/vlcsnap-2017-06-06-18h24m17s970.png',0,'2'),(13,4,7,'dsfgdsaf','fds',4.00,'arquivo/vlcsnap-2017-06-06-19h08m20s879.png',0,'2');
 /*!40000 ALTER TABLE `tbl_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -489,6 +488,23 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary view structure for view `vw_produto`
+--
+
+DROP TABLE IF EXISTS `vw_produto`;
+/*!50001 DROP VIEW IF EXISTS `vw_produto`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `vw_produto` AS SELECT 
+ 1 AS `nome`,
+ 1 AS `descricao`,
+ 1 AS `categoria`,
+ 1 AS `subcategoria`,
+ 1 AS `preco`,
+ 1 AS `informacaonutricional`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Temporary view structure for view `vw_produto_informacaonutricional`
 --
 
@@ -572,6 +588,24 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
+-- Final view structure for view `vw_produto`
+--
+
+/*!50001 DROP VIEW IF EXISTS `vw_produto`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `vw_produto` AS select `p`.`nome` AS `nome`,`p`.`descricao` AS `descricao`,`c`.`nome` AS `categoria`,`s`.`nome` AS `subcategoria`,`p`.`preco` AS `preco`,(case `p`.`id_informacaonutricional` when NULL then 'Não há registro' else 'Registrado' end) AS `informacaonutricional` from (((`tbl_produto` `p` join `tbl_subcategoria` `s` on((`p`.`id_subcategoria` = `s`.`id_subcategoria`))) join `tbl_categoria` `c` on((`s`.`id_categoria` = `c`.`id_categoria`))) join `tbl_informacaonutricional` `i` on((`p`.`id_informacaonutricional` = `i`.`id_informacaonutricional`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
 -- Final view structure for view `vw_produto_informacaonutricional`
 --
 
@@ -634,4 +668,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-25 16:57:53
+-- Dump completed on 2017-07-11 21:00:17
