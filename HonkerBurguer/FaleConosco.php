@@ -7,8 +7,7 @@
 <!-- Fale Conosco -->
 <?php
 	// Conexão com banco de dados MySQL
-	$conexao = mysql_connect('localhost', 'root', 'bcd127');
-	mysql_select_db('db_honkerburguer');
+	require_once('CMS/conectarMySQL.php');
 	
 	//Inicialização de variáveis
 	$nome = "";
@@ -36,20 +35,12 @@
 		$produto = $_POST['txtProduto'];
 		$profissao = $_POST['txtProfissao'];
 		$feedback = $_POST['txtFeedback'];
-		
-		//Verificação se algum campo obrigatório está vazio
-		if($nome == "" || $sexo == "" || $celular == "" || $email == "" || $profissao == "")
-		{
-			?><script>alert('Campos obrigatórios em branco!');</script><?php
-		}
-		else
-		{
-			//Inserção no banco de dados MySQL
-			$sql = "INSERT INTO tbl_faleconosco (nome, sexo, telefone, celular, email, homepage, facebook, informacaoproduto, profissao, feedback)";
-			$sql = $sql."VALUES('".$nome."','".$sexo."','".$telefone."','".$celular."','".$email."','".$homepage."','".$facebook."','".$produto."','".$profissao."','".$feedback."')";
-			mysql_query($sql);
-			header('location:FaleConosco.php');
-		}
+
+		//Inserção no banco de dados MySQL
+		$sql = "INSERT INTO tbl_faleconosco (nome, sexo, telefone, celular, email, homepage, facebook, informacaoproduto, profissao, feedback)";
+		$sql = $sql."VALUES('".$nome."','".$sexo."','".$telefone."','".$celular."','".$email."','".$homepage."','".$facebook."','".$produto."','".$profissao."','".$feedback."')";
+		mysql_query($sql);
+		header('location:FaleConosco.php');
 	}
 ?>
 <!DOCTYPE html>
@@ -58,6 +49,20 @@
 		<title>Honker Burguer - Fale Conosco</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="CSS/style.css">
+		<script>
+			function mostrarMenu()
+			{
+				var div = document.getElementById("menuResponsivo");
+				if (div.style.display == "none")
+				{
+					div.style.display = "block";
+				}
+				else
+				{
+					div.style.display = "none";
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<div id="principalFC">
@@ -67,6 +72,18 @@
 				require('redesSociais.php');
 			?>
 			<section>
+				<div id="menuResponsivo"  style="display: none;">
+					<div><a style="cursor: pointer;" onClick="mostrarMenu()">X</a></div>
+					<ul id="listaMenuResponsivo">
+						<a href="Index.php"><li>Home</li></a>
+						<a href="BandaEmDestaque.php"><li>Banda em Destaque</li></a>
+						<a href="Sobre.php"><li>Sobre</li></a>
+						<a href="Promocoes.php"><li>Promoções</li></a>
+						<a href="Ambientes.php"><li>Ambientes</li></a>
+						<a href="LancheDoMes.php"><li>Lanche do Mês</li></a>
+						<a href="FaleConosco.php"><li>Fale Conosco</li></a>
+					</ul>
+				</div>
 				<div class="conteudoExternoFC">
 					<div class="bgLeftFC"></div>
 					<div class="conteudoInternoFC">

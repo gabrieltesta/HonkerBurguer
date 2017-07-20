@@ -5,7 +5,7 @@
 	Validação HTML5 W3C - 0 erros encontrados.
 -->
  <?php
-	require('/CMS/conectarMySQL.php');
+	require('CMS/conectarMySQL.php');
 	
 	$nome = "";
 	$preco = "";
@@ -64,6 +64,20 @@
 		<title>Honker Burguer - Lanche do Mês</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="CSS/style.css">
+		<script>
+			function mostrarMenu()
+			{
+				var div = document.getElementById("menuResponsivo");
+				if (div.style.display == "none")
+				{
+					div.style.display = "block";
+				}
+				else
+				{
+					div.style.display = "none";
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<div id="principalLancheDoMes">
@@ -73,6 +87,18 @@
 				require('redesSociais.php');
 			?>
 			<section>
+				<div id="menuResponsivo"  style="display: none;">
+					<div><a style="cursor: pointer;" onClick="mostrarMenu()">X</a></div>
+					<ul id="listaMenuResponsivo">
+						<a href="Index.php"><li>Home</li></a>
+						<a href="BandaEmDestaque.php"><li>Banda em Destaque</li></a>
+						<a href="Sobre.php"><li>Sobre</li></a>
+						<a href="Promocoes.php"><li>Promoções</li></a>
+						<a href="Ambientes.php"><li>Ambientes</li></a>
+						<a href="LancheDoMes.php"><li>Lanche do Mês</li></a>
+						<a href="FaleConosco.php"><li>Fale Conosco</li></a>
+					</ul>
+				</div>
 				<div class="conteudoExternoLDM">				
 					<div id="titulo"><h6>Lanche do Mês</h6></div>
 					<div class="tituloLanche" style="margin-top: 150px;"><h6><?php echo($nome); ?></h6></div>

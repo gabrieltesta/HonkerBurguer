@@ -1,6 +1,7 @@
 <!-- Painel Superior -->
 <div id="painelSuperior">
 	<header>
+		<img id="menuResponsivoImg" src="Imagens/menu.png" alt="Menu" onClick="mostrarMenu()">
 		<a href="Index.php"><img src="Imagens/logo.png" alt="logo"></a>
 	</header>
 	<!-- Menu  de navegação -->
@@ -17,7 +18,7 @@
 	</nav>
 	<!-- Formulário de autenticação CMS -->
 	<div id="login">
-		<form name="frmLogin" method="post" action="cms/index.php">
+		<form name="frmLogin" method="post" action="CMS/Index.php">
 		<table>
 			<tr>
 				<td>

@@ -5,7 +5,14 @@
 	Validação HTML5 W3C - 0 erros encontrados.
 -->
 <?php 
+	header('Content-Type: text/html; charset=utf-8');
 	require_once('CMS/conectarMySQL.php');
+	
+	$imagem = "";
+	$nome = "";
+	$descricao = "";
+	$preco = "";
+	
 	// Ao retornar de um login mal sucedido, o página possui login=false na URL
 	// método verifica a existência do parâmetro login e cria uma janela de alerta de login inválido.
 	if (isset($_GET['login']))
@@ -23,9 +30,19 @@
 	
 	if (isset($_GET['id_produto']))
 	{
-	    	$sql = "UPDATE tbl_produto SET qtd_acessos=qtd_acessos+1 WHERE id_produto=".$_GET['id_produto'].";";
-	    	mysql_query($sql);
+	    $sql = "SELECT * FROM tbl_produto WHERE id_produto=".$_GET['id_produto'].";";
+	    $select = mysql_query($sql);
+	    if ($rs=mysql_fetch_array($select))
+	    {
+	        $imagem = "CMS/".$rs['imagem'];
+	        $nome = $rs['nome'];
+	        $descricao = $rs['descricao'];
+	        $preco = "R$ ".$rs['preco'];
+	        
+	        $preco = str_replace('.', ',', $preco);
+	    }
 	}
+	
 ?>
 <!-- Home -->
 <!DOCTYPE html>
@@ -34,6 +51,29 @@
 		<title>Honker Burguer - Home</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="CSS/style.css">
+		<script>
+			function mostrarMenu()
+			{
+				var div = document.getElementById("menuResponsivo");
+				if (div.style.display == "none")
+				{
+					div.style.display = "block";
+				}
+				else
+				{
+					div.style.display = "none";
+				}
+			}
+			
+			function mostrarProduto()
+			{
+				var area = document.getElementById('areaDisplay');
+				var detalhes = document.getElementById('detalhesProduto');
+
+				area.style.display = "none";
+				detalhes.style.display = "block";
+			}
+		</script>
 	</head>
 	<body>
 		<div id="principal">
@@ -43,13 +83,25 @@
 				require('redesSociais.php');
 			?>
 			<section>
+				<div id="menuResponsivo" style="display: none;">
+					<div><a style="cursor: pointer;" onClick="mostrarMenu()">X</a></div>
+					<ul id="listaMenuResponsivo">
+						<a href="Index.php"><li>Home</li></a>
+						<a href="BandaEmDestaque.php"><li>Banda em Destaque</li></a>
+						<a href="Sobre.php"><li>Sobre</li></a>
+						<a href="Promocoes.php"><li>Promoções</li></a>
+						<a href="Ambientes.php"><li>Ambientes</li></a>
+						<a href="LanchedoMes.php"><li>Lanche do Mês</li></a>
+						<a href="FaleConosco.php"><li>Fale Conosco</li></a>
+					</ul>
+				</div>
 				<div class="conteudoExterno">
 					<!-- Slider -->
 					<div class="rotator">
 						<ul id="rotmenu">
 							<!-- Tela 1 (Slider) -->
 							<li>
-								<a href="rot1">Honker Burguer</a>
+								<a href="#rot1">Honker Burguer</a>
 								<div class="infoRotator">
 									<div class="infoImagem">banner1.jpg</div>
 									<div class="infoHeader">HONKER BURGUER</div>
@@ -60,7 +112,7 @@
 							</li>
 							<!-- Tela 2 (Slider) -->
 							<li>
-								<a href="rot2">Lanche do Mês</a>
+								<a href="#rot2">Lanche do Mês</a>
 								<div class="infoRotator">
 									<div class="infoImagem">banner2.jpg</div>
 									<div class="infoHeader">Lanche do Mês</div>
@@ -72,7 +124,7 @@
 							</li>
 							<!-- Tela 3 (Slider) -->
 							<li>
-								<a href="rot3">Promoções</a>
+								<a href="#rot3">Promoções</a>
 								<div class="infoRotator">
 									<div class="infoImagem">banner3.jpg</div>
 									<div class="infoHeader">Promoções</div>
@@ -84,7 +136,7 @@
 							</li>
 							<!-- Tela 4 (Slider) -->
 							<li>
-								<a href="rot4">Banda em destaque</a>
+								<a href="#rot4">Banda em destaque</a>
 								<div class="infoRotator">
 									<div class="infoImagem">banner4.jpg</div>
 									<div class="infoHeader">Banda em destaque</div>
@@ -105,6 +157,7 @@
 							</div>
 						</div>		
 					</div>
+					<img id="imgMobile" src="Imagens/banner1.jpg" alt="Honker Burguer">
 					<!-- Menu de categorias -->
 					<div id="menuSecundario">
 						<ul class="listaMenuSecundario">
@@ -130,7 +183,7 @@
 						</ul>
 					</div>
 					<!-- Área de produtos -->
-					<div id="areaDisplay">
+					<div id="areaDisplay" style="display: block;">
 						<div id="buscaProdutos" style="position:relative;">
 							<form method="get" action="Index.php">
 								<input type="text" name="search" placeholder="Pesquise um produto aqui..." id="inputBusca">
@@ -170,10 +223,19 @@
 									<p class="displayDescricao"><?php echo($resultado['descricao']); ?></p>
 									<p class="displayPreco">R$ <?php echo($resultado['preco']); ?></p>
 								</div>
-								</a>
+								</a>								
 								<?php
 							}
 						?>
+					</div>
+					<div id="detalhesProduto" style="display: none;">
+						<div id="detalhesProdutoBox">
+							<div><a href="Index.php">X</a></div>
+							<img src="<?php echo($imagem); ?>" alt="<?php echo($nome); ?>">
+							<h3><?php echo($nome); ?></h3>
+							<div id="detalhesProdutoDescricao"><p><?php echo($descricao); ?></p></div>
+							<span id="detalhesProdutoPreco"><?php echo($preco); ?></span>
+						</div>
 					</div>
 				</div>
 
@@ -267,3 +329,10 @@
 		</script>
 	</body>
 </html>
+<?php 
+    if(isset($_GET['id_produto']))
+    {
+        echo '<script>mostrarProduto();</script>';
+    }
+
+?>
